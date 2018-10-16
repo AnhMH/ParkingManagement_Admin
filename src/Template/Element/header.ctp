@@ -1,7 +1,7 @@
 <header class="main-header">
     <!-- Logo -->
     <a href="<?php echo $BASE_URL;?>" class="logo">
-        <span class="logo-lg"><b>VNS</b>HOP</span>
+        <span class="logo-lg"></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -15,7 +15,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?php echo $AppUI['avatar']; ?>" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><?php echo $AppUI['display_name']; ?></span>
+                        <span><?php echo $AppUI['display_name']; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->

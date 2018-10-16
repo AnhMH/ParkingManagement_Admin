@@ -19,72 +19,55 @@
                 </a>
             </li>
             
-            <li class="<?php if (in_array($controller, array('orders'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL; ?>/orders">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span><?php echo __('LABEL_ORDER_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('products'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/products">
-                    <i class="fa fa-shopping-bag"></i>
-                    <span><?php echo __('LABEL_PRODUCT_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('cates'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/cates">
-                    <i class="fa fa-user"></i>
-                    <span><?php echo __('LABEL_CATE_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('subcates'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/subcates">
-                    <i class="fa fa-user"></i>
-                    <span><?php echo __('LABEL_SUB_CATE_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('tags'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/tags">
-                    <i class="fa fa-user"></i>
-                    <span><?php echo __('LABEL_TAG_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('suppliers'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/suppliers">
-                    <i class="fa fa-user-secret"></i>
-                    <span><?php echo __('LABEL_SUPPLIERS_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="<?php if (in_array($controller, array('news'))) echo ' active ' ?>">
-                <a href="<?php echo $BASE_URL;?>/news">
-                    <i class="fa fa-user-secret"></i>
-                    <span><?php echo __('LABEL_NEWS_MANAGEMENT'); ?></span>
-                </a>
-            </li>
-            
-            <li class="treeview <?php if (in_array($controller, array('admins', 'pages'))) echo ' active ' ?>">
+            <li class="treeview <?php if (in_array($controller, array('admins'))) echo ' active ' ?>">
                 <a href="#">
-                    <i class="fa fa-cogs"></i> 
-                    <span><span><?php echo __('LABEL_SETTING_MANAGEMENT'); ?></span></span>
+                    <i class="fa fa-user"></i>
+                    <span><?php echo __('LABEL_ADMIN_MANAGEMENT'); ?></span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if ($controller == 'admins' && in_array($action, array('updateprofile'))) echo ' active ' ?>">
-                        <a href="<?php echo $BASE_URL; ?>/admins/updateprofile">
-                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_UPDATE_PROFILE');?>
+                    <li class="<?php if (in_array($action, array('index'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/admins">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ADMIN_LIST');?>
                         </a>
                     </li>
-                    <li class="<?php if ($controller == 'pages') echo ' active ' ?>">
-                        <a href="<?php echo $BASE_URL; ?>/pages">
-                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PAGE_MANAGEMENT');?>
+                    <li class="<?php if (in_array($action, array('viewlog'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/admins/viewlog">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ADMIN_LOG');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="treeview <?php if (in_array($controller, array('revenue'))) echo ' active ' ?>">
+                <a href="#">
+                    <i class="fa fa fa-usd"></i>
+                    <span><?php echo __('LABEL_REVENUE_MANAGEMENT'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('index'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/revenue">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_REVENUE_LIST');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('priceformula1'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/revenue/priceformula1">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PRICE_FORMULA_1');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('priceformula2'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/revenue/priceformula2">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PRICE_FORMULA_2');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('priceformula3'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/revenue/priceformula3">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PRICE_FORMULA_3');?>
                         </a>
                     </li>
                 </ul>

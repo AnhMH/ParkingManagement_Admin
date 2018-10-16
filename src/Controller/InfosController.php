@@ -37,7 +37,7 @@ class InfosController extends AppController {
     }
     
     public function clearcache() {
-        include_once ROOT . "/config/auth.php";
+//        include_once ROOT . "/config/auth.php";
         
         // Delete language cache
         $files = glob(ROOT . '/tmp/cache/persistent/*'); // get all file names

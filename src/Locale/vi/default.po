@@ -36,3 +36,27 @@ msgstr "Vui lòng nhập email"
 
 msgid "MESSAGE_PASSWORD_EMPTY"
 msgstr "Vui lòng nhập mật khẩu"
+
+msgid "LABEL_UPDATE_PROFILE"
+msgstr "Cập nhật tài khoản"
+
+msgid "LABEL_SIGN_OUT"
+msgstr "Đăng xuất"
+
+msgid "LABEL_DASHBOARD"
+msgstr "Dashboard"
+
+msgid "LABEL_ADMIN_MANAGEMENT"
+msgstr "Quản lý nhân sự"
+
+msgid "LABEL_ADMIN_LIST"
+msgstr "Thông tin nhân sự"
+
+msgid "LABEL_ADMIN_LOG"
+msgstr "Dò bảng chấm công"
+
+msgid "LABEL_HOME"
+msgstr "Trang chủ"
+
+msgid "LABEL_SEARCH"
+msgstr "Tìm kiếm"
