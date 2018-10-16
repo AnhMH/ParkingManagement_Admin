@@ -78,7 +78,7 @@ class AppController extends Controller
                 'action' => 'index',
                 'plugin' => null
             ),
-            'sessionKey' => 'Auth.HNKSenpai'
+            'sessionKey' => 'Auth.ParkingManagement'
         ));
         
         // set session ckeditor

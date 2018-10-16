@@ -382,7 +382,7 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
-        'cookie' => 'ChoTreoCookies',
+        'cookie' => 'ParkingManagementCookies',
         'timeout' => 24*60, // 1day
     ],
 ];

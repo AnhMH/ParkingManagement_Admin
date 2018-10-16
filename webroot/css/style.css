@@ -33,6 +33,9 @@ img {
     color: #fff;
     margin: 10px 0;
 }
+.login-page .message {
+    text-align: center;
+}
 .message.success {
     background-color: #00a65a !important;
 }
