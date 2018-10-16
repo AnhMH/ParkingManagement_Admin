@@ -34,7 +34,6 @@ class AppController extends Controller
 
     /** @var object $AppUI Session infomation of user logged. */
     public $AppUI = null;
-    public $vipType = 0;
     
     /** @var object $controller Controller name. */
     public $controller = null;
@@ -45,8 +44,6 @@ class AppController extends Controller
     public $current_url = '';
     public $BASE_URL = '';
     public $BASE_URL_FRONT = '';
-    
-    public $_cateTemp = array();
 
     /**
      * Initialization hook method.
@@ -68,6 +65,11 @@ class AppController extends Controller
             'httpOnly' => true
         ]);
         $this->loadComponent('Common');
+        $this->loadComponent('Breadcrumb');
+        $this->loadComponent('SimpleForm');
+        $this->loadComponent('SearchForm');
+        $this->loadComponent('UpdateForm');
+        $this->loadComponent('SimpleTable');
         $this->loadComponent('Auth', array(
             'loginRedirect' => false,
             'logoutRedirect' => false,
@@ -76,8 +78,11 @@ class AppController extends Controller
                 'action' => 'index',
                 'plugin' => null
             ),
-            'sessionKey' => 'Auth.ChoTreo'
+            'sessionKey' => 'Auth.HNKSenpai'
         ));
+        
+        // set session ckeditor
+        $this->request->session()->write('ckeditor', Configure::read('Config.CKeditor'));
     }
     
     /**
@@ -104,6 +109,14 @@ class AppController extends Controller
         $this->action = strtolower($this->request->params['action']);
         $this->current_url = Router::url($this->here, true);
         $this->BASE_URL = Router::fullBaseUrl() . USE_SUB_DIRECTORY;
+        $this->BASE_URL_FRONT = Configure::read('Front.Host');
+        
+        // Redirect Auth
+        if ($this->isAuthorized()) {
+            if ($this->controller == 'login' && $this->action == 'index') {
+                return $this->redirect('/');
+            }
+        }
         
     }
 
@@ -115,6 +128,24 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event) {
         parent::beforeRender($event);
+        
+        // Breadcrumb
+        if (!empty($this->Breadcrumb->get())) {
+            $this->set('breadcrumbTitle', $this->Breadcrumb->getTitle());
+            $this->set('breadcrumb', $this->Breadcrumb->get());
+        }
+        
+        // Form / Table
+        if (!empty($this->SearchForm->get())) {
+            $this->set('searchForm', $this->SearchForm->get());
+        }
+        if (!empty($this->UpdateForm->get())) {
+            $this->set('updateForm', $this->UpdateForm->get());
+        }
+        if (!empty($this->SimpleTable->get())) {
+            $this->set('table', $this->SimpleTable->get());
+        }
+        
         // Auth
         if (isset($this->Auth) && $this->isAuthorized()) {
             $this->set('AppUI', $this->Auth->user());
@@ -128,10 +159,18 @@ class AppController extends Controller
         $this->set('BASE_URL_FRONT', $this->BASE_URL_FRONT);
         $this->set('url', $this->request->url);
         $this->set('referer', Controller::referer());
-        $this->set('vipType', $this->vipType);
 
         // Set default layout
         $this->setLayout();
+        
+        // Check to use common view
+        $templatePath = $this->viewBuilder()->templatePath();
+        $viewName = $this->action . '.ctp';
+        $viewPath = APP . 'Template' . DS . $templatePath . DS . $viewName;
+        $commonViewPath = APP . 'Template' . DS . 'Common' . DS . $viewName;
+        if (!file_exists($viewPath) && file_exists($commonViewPath)) {
+            $this->viewBuilder()->templatePath('Common');
+        }
     }
     
     /**
@@ -150,7 +189,6 @@ class AppController extends Controller
         }
         if (!empty($user)) {
             $this->AppUI = $user;
-            $this->vipType = !empty($user['type']) ? $user['type'] : 0;
             return true;
         }
         return false;
@@ -182,10 +220,43 @@ class AppController extends Controller
             $this->viewBuilder()->layout('empty');
         } else if ($this->controller == 'ajax') {
             $this->viewBuilder()->layout('ajax');
-        } else if ($this->controller == 'pos') {
-            $this->viewBuilder()->layout('pos');
         } else {
             $this->viewBuilder()->layout('default');
+        }
+    }
+    
+    /**
+     * Commont function creater message notification.
+     * 
+     * @return object
+     */
+    public function doGeneralAction() {
+        $data = $this->request->data;
+        if ($this->request->is('post')) {
+            if (!empty($data['actionId'])) {
+                $data['items'] = array($data['actionId']);
+            }
+            if (!empty($data['action']) && !empty($data['items'])) {
+                $action = $data['action'];
+                $param['id'] = implode(',', $data['items']);
+                switch ($action) {
+                    case 'enable':
+                    case 'disable':
+                        $param['disable'] = ($data['action'] == 'disable' ? 1 : 0);
+                        Api::call("{$this->request->params['controller']}/disable", $param);
+                        $error = Api::getError();
+                        if ($error) {
+                            AppLog::warning("Can not update", __METHOD__, $data);
+                            $this->Flash->error(__('MESSAGE_CANNOT_UPDATE'));
+                        } else {
+                            $this->Flash->success(__('MESSAGE_UPDATE_SUCCESSFULLY'));
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return $this->redirect($this->request->here(false));
+            }
         }
     }
     
@@ -317,74 +388,4 @@ class AppController extends Controller
         return $base64;
     }
     
-    /**
-     * Show categories
-     * 
-     * @param array
-     * @return array
-     */
-    public function showCategories($categories, $parentid = 0, $char = '')
-    {
-        if (empty($categories)) {
-            return '';
-        }
-        foreach ($categories as $key => $item) {
-            // Nếu là chuyên mục con thì hiển thị
-            if ($item['parent_id'] == $parentid) {
-                // Xóa chuyên mục đã lặp
-                $item['name'] = $char.$item['name'];
-                $this->_cateTemp[] = $item;
-                unset($categories[$key]);
-
-                // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
-                $this->showCategories($categories, $item['id'], $char . '|---');
-            }
-        }
-    }
-    
-    /**
-     * Get child categories by parent id
-     * 
-     * @param array
-     * @return array
-     */
-    function getCategoriesByParentId($cateId) {
-        $ids = array($cateId);
-        
-        $cates = $this->_cateTemp;
-        if (empty($cates)) {
-            $cates = Api::call(Configure::read('API.url_cates_all'), array());
-            $this->_cateTemp = $cates;
-        }
-
-        foreach ($cates as $val) {
-            if ($val['parent_id'] == $cateId) {
-                $children = $this->getCategoriesByParentId($val['id']);
-                if ($children) {
-                    $ids = array_merge($children, $ids);
-                }
-            }
-        }
-
-        return $ids;
-    }
-    
-    /**
-     * Pagination data
-     * 
-     * @param array
-     * @return array
-     */
-    function dataPagination($data, $page, $limit) {
-        $result = array();
-        $offset = ($page - 1)*$limit;
-        for ($i = $offset; $i < ($offset + $limit); $i++) {
-            if (empty($data[$i])) {
-                break;
-            } else {
-                $result[] = $data[$i];
-            }
-        }
-        return $result;
-    }
 }

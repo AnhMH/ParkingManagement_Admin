@@ -1,41 +1,44 @@
-<nav id="navbar-container" class="navbar navbar- navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle menu-toggler pull-left" onclick="$('#sidebar').toggleClass('hidden-xs hidden-sm hidden-md')">
-                <span class="sr-only">Toggle sidebar</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-header hidden-768 col-xs-4 col-md-6 text-right" style="line-height:45px;height:45px;vertical-align:middle;">
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <?php if(isset($data['store'])){ ?>
-                <li>
-                    <label style="margin: 13px 15px; color: white">
-                        Cửa hàng
-                    </label>
-                </li>
-                <li style="border-right: 1px solid #E1E1E1; padding-right: 15px;">
-                    <select id="store-id" class="form-control" style="margin: 8px auto">
-                        <?php foreach ($data['store'] as $key => $item) :?>
-                            <option <?php if($item['ID']==$data['store_id']) echo 'selected '; ?> value="<?php echo $item['ID']; ?>"><?php echo $item['stock_name']; ?></option>
-                        <?php endforeach;?>
-                    </select>
-                </li>
-                <?php } ?>
-                <li class="dropdown user-profile">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"><span class="hello">Xin chào, </span><?php echo (isset($AppUI)) ?
-                            $AppUI['name'] : ''; ?><span class="caret"></span></a>
+<header class="main-header">
+    <!-- Logo -->
+    <a href="<?php echo $BASE_URL;?>" class="logo">
+        <span class="logo-lg"><b>VNS</b>HOP</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="<?php echo $AppUI['avatar']; ?>" class="user-image" alt="User Image">
+                        <span class="hidden-xs"><?php echo $AppUI['display_name']; ?></span>
+                    </a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo $BASE_URL;?>/admins/updateprofile"><i class="fa fa-user"></i>Tài khoản</a></li>
-                        <li><a href="<?php echo $BASE_URL;?>/logout"><i class="fa fa-power-off"></i>Thoát</a></li>
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="<?php echo $AppUI['avatar']; ?>" class="img-circle" alt="User Image">
+
+                            <p>
+                                <?php echo $AppUI['display_name']; ?>
+                                <small><?php !empty($AppUI['created']) ? date('Y-m-d', $AppUI['created']) : '' ;?></small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="<?php echo $BASE_URL; ?>/admins/updateprofile" class="btn btn-default btn-flat"><?php echo __('LABEL_UPDATE_PROFILE'); ?></a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="<?php echo $BASE_URL; ?>/login/logout" class="btn btn-default btn-flat"><?php echo __('LABEL_SIGN_OUT'); ?></a>
+                            </div>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>

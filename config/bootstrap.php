@@ -241,7 +241,7 @@ if ($env == 'production') {
     include_once ('development/bootstrap.php');
 }
 
-define('DEFAULT_SITE_TITLE', 'ChoTreo Admin');
+define('DEFAULT_SITE_TITLE', 'Parking Management');
 if (!defined('USE_SUB_DIRECTORY')) {
     define('USE_SUB_DIRECTORY', '');
 }

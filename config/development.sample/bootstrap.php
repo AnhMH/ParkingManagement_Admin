@@ -7,7 +7,7 @@ use Cake\Core\Configure;
 
 define('USE_SUB_DIRECTORY', '');
 
-Configure::write('API.Host', 'http://api.maishop.localhost/');
+Configure::write('API.Host', 'http://api.pm.localhost/');
 Configure::write('Config.HTTPS', false);
 
 Configure::write('Config.CKeditor', array(
