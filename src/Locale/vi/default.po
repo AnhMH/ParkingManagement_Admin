@@ -60,3 +60,18 @@ msgstr "Trang chủ"
 
 msgid "LABEL_SEARCH"
 msgstr "Tìm kiếm"
+
+msgid "LABEL_REVENUE_MANAGEMENT"
+msgstr "Quản lý doanh thu"
+
+msgid "LABEL_REVENUE_LIST"
+msgstr "Thống kê doanh thu"
+
+msgid "LABEL_PRICE_FORMULA_1"
+msgstr "CT TT theo công văn"
+
+msgid "LABEL_PRICE_FORMULA_2"
+msgstr "CT TT lũy tiến"
+
+msgid "LABEL_PRICE_FORMULA_3"
+msgstr "CT tổng hợp"
