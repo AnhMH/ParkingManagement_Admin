@@ -99,3 +99,30 @@ msgstr "Thêm mới"
 
 msgid "LABEL_DELETE"
 msgstr "Xóa"
+
+msgid "LABEL_ADMIN_TYPE_LIST"
+msgstr "Thông tin chức vụ"
+
+msgid "LABEL_ADMIN_TYPE_UPDATE"
+msgstr "Chỉnh sửa chức vụ"
+
+msgid "LABEL_SAVE"
+msgstr "Lưu"
+
+msgid "LABEL_CANCEL"
+msgstr "Quay lại"
+
+msgid "MESSAGE_SAVE_OK"
+msgstr "Lưu dữ liệu thành công"
+
+msgid "MESSAGE_SAVE_NG"
+msgstr "LỖI!!! Lưu dữ liệu không thành công"
+
+msgid "MESSAGE_UPDATE_SUCCESSFULLY"
+msgstr "Cập nhật dữ liệu thành công"
+
+msgid "LABEL_INFO"
+msgstr "Thông báo"
+
+msgid "LABEL_CLOSE"
+msgstr "Đóng"

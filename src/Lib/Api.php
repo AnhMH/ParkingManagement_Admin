@@ -183,10 +183,10 @@ class Api {
         foreach ($apiErrors as $error) {
             if (is_array($error)) {
                 foreach ($error as $err) {
-                    $result .= "<p>{$err}</p>";
+                    $result .= "{$err}";
                 }
             } else {
-                $result .= "<p>{$error}</p>";
+                $result .= "{$error}";
             }
         }
         return $result;

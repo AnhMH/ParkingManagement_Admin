@@ -19,7 +19,7 @@
                 </a>
             </li>
             
-            <li class="treeview <?php if (in_array($controller, array('admins'))) echo ' active ' ?>">
+            <li class="treeview <?php if (in_array($controller, array('admins', 'admintypes'))) echo ' active ' ?>">
                 <a href="#">
                     <i class="fa fa-user"></i>
                     <span><?php echo __('LABEL_ADMIN_MANAGEMENT'); ?></span>
@@ -28,7 +28,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if (in_array($action, array('index'))) echo ' active ' ?>">
+                    <li class="<?php if (in_array($action, array('index')) && $controller == 'admins') echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/admins">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ADMIN_LIST');?>
                         </a>
@@ -36,6 +36,11 @@
                     <li class="<?php if (in_array($action, array('viewlog'))) echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/admins/viewlog">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ADMIN_LOG');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('index')) && $controller == 'admintypes') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/admintypes">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ADMIN_TYPE_LIST');?>
                         </a>
                     </li>
                 </ul>

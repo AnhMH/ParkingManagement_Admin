@@ -39,9 +39,13 @@ $(document).ready(function ($) {
 function disableEnableMulti(type) {
     var items = getItemsChecked('items[]', ',');
     if (items == '') {
-        showAlertModal('Vui lòng chọn');
+        showAlertModal('Vui lòng chọn dữ liệu');
         return false;
     }
+    if (!confirm('Bạn có chắc chắn muốn xóa dữ liệu này?')) {
+        return false;
+    }
+    
     $("#action").val(type);
     return true;
 }
