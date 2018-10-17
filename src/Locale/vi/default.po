@@ -75,3 +75,27 @@ msgstr "CT TT lũy tiến"
 
 msgid "LABEL_PRICE_FORMULA_3"
 msgstr "CT tổng hợp"
+
+msgid "LABEL_NAME"
+msgstr "Họ tên"
+
+msgid "LABEL_LIMIT"
+msgstr "Giới hạn"
+
+msgid "LABEL_ACCOUNT"
+msgstr "Tài khoản"
+
+msgid "LABEL_ADMIN_TYPE"
+msgstr "Chức vụ"
+
+msgid "LABEL_GENDER"
+msgstr "Giới tính"
+
+msgid "LABEL_EDIT"
+msgstr "Chỉnh sửa"
+
+msgid "LABEL_ADD_NEW"
+msgstr "Thêm mới"
+
+msgid "LABEL_DELETE"
+msgstr "Xóa"
