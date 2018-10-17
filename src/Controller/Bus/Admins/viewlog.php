@@ -52,13 +52,6 @@ $data = !empty($result['data']) ? $result['data'] : array();
 $this->SimpleTable
         ->setDataset($data)
         ->addColumn(array(
-            'id' => 'item',
-            'name' => 'items[]',
-            'type' => 'checkbox',
-            'value' => '{id}',
-            'width' => 20,
-        ))
-        ->addColumn(array(
             'id' => 'id',
             'title' => __('ID'),
             'empty' => ''
@@ -92,13 +85,7 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_EXPORT_EXCEL'),
             'class' => 'btn btn-primary btn-export-excel',
-        ))
-        ->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_DELETE'),
-            'class' => 'btn btn-danger btn-disable',
         ));
-
 $this->set('pageTitle', $pageTitle);
 $this->set('total', $total);
 $this->set('param', $param);

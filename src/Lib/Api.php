@@ -93,11 +93,13 @@ class Api {
                     AppLog::info("END API: {$url}", __METHOD__, $result);
                     throw new ForbiddenException("Forbidden", $result['status']);
                 } else if ($result['status'] === 401) {
-                    static::$errors = static::parseError($result['error']);
-                    if ($defaultResult) {
-                        $result = $defaultResult;
-                    }
-                    return $result;
+//                    static::$errors = static::parseError($result['error']);
+//                    if ($defaultResult) {
+//                        $result = $defaultResult;
+//                    }
+//                    return $result;
+                    header('Location: /login/logout/1');
+                    die;
                 } else if ($result['status'] === 400) {
                     static::$errors = static::parseError($result['error']);
                     if ($defaultResult) {

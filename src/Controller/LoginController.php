@@ -28,7 +28,7 @@ class LoginController extends AppController {
     /**
      * Logout action
      */
-    public function logout() {
+    public function logout($notSaveLog = '') {
         include ('Bus/Login/logout.php');
     }
     
