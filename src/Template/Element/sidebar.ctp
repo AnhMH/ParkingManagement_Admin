@@ -77,6 +77,23 @@
                     </li>
                 </ul>
             </li>
+            
+            <li class="treeview <?php if (in_array($controller, array('vehicles'))) echo ' active ' ?>">
+                <a href="#">
+                    <i class="fa fa-barcode"></i>
+                    <span><?php echo __('LABEL_CARD_VEHICLE_MANAGEMENT'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('index')) && $controller == 'vehicles') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/vehicles">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_VEHICLE_LIST');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

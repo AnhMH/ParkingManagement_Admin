@@ -220,6 +220,8 @@ class AppController extends Controller
             $this->viewBuilder()->layout('empty');
         } else if ($this->controller == 'ajax') {
             $this->viewBuilder()->layout('ajax');
+        } else if ($this->controller == 'error') {
+            $this->viewBuilder()->layout('error');
         } else {
             $this->viewBuilder()->layout('default');
         }

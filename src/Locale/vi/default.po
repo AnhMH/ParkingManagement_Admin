@@ -153,3 +153,21 @@ msgstr "Nhiều ngày"
 
 msgid "LABEL_EXPORT_EXCEL"
 msgstr "Xuất file Excel"
+
+msgid "LABEL_CARD_VEHICLE_MANAGEMENT"
+msgstr "Quản lý thẻ xe - loại xe"
+
+msgid "LABEL_VEHICLE_LIST"
+msgstr "Quản lý loại xe"
+
+msgid "LABEL_VEHICLE_NAME"
+msgstr "Tên loại xe"
+
+msgid "LABEL_VEHICLE_CODE"
+msgstr "Ký hiệu"
+
+msgid "LABEL_MONTHLY_COST"
+msgstr "Tiền thu tháng"
+
+msgid "LABEL_LIMIT2"
+msgstr "Hạn mức"
