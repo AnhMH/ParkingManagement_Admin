@@ -72,13 +72,19 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
+            'id' => 'password',
+            'title' => __('LABEL_PASSWORD'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
             'id' => 'type_name',
-            'title' => __('LABEL_ADMIN_TYPE_NAME'),
+            'title' => __('LABEL_ADMIN_TYPE'),
             'empty' => ''
         ))
         ->addColumn(array(
             'id' => 'gender',
             'title' => __('LABEL_GENDER'),
+            'rules' => Configure::read('Config.gender'),
             'empty' => ''
         ))
         ->addColumn(array(

@@ -126,3 +126,6 @@ msgstr "Thông báo"
 
 msgid "LABEL_CLOSE"
 msgstr "Đóng"
+
+msgid "LABEL_UPDATE"
+msgstr "Chỉnh sửa"

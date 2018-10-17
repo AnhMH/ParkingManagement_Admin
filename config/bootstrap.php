@@ -232,6 +232,10 @@ Configure::write('Config.orderStatus', array(
     0 => 'Khởi tạo',
     1 => 'Hoàn thành',
 ));
+Configure::write('Config.gender', array(
+    1 => 'Nam',
+    2 => 'Nữ',
+));
 
 if ($env == 'production') {
     define('VERSION_DATE', date('YmdHis'));

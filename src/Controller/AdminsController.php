@@ -22,6 +22,13 @@ class AdminsController extends AppController {
     }
     
     /**
+     * Admins update
+     */
+    public function update($id = '') {
+        include ('Bus/Admins/update.php');
+    }
+    
+    /**
      * Admins log
      */
     public function viewlog() {
