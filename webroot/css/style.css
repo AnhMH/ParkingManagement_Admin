@@ -92,3 +92,15 @@ img {
     width: 100%;
     padding: 10px;
 }
+.dateFromToInputs {
+    margin-top: -15px;
+}
+.dateFromToInputs input,
+.dateFromToInputs span {
+    float: left;
+    width: 45%;
+}
+.dateFromToInputs span {
+    width: 10%;
+    text-align: center;
+}

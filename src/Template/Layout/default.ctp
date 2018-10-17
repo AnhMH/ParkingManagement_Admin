@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/bower_components/select2/dist/css/select2.min.css"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/skins/skin-blue.min.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/plugins/pace/pace.min.css"/>
+        <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/bootstrap-toggle.min.css"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/style.css?<?php echo VERSION_DATE ?>"/>
 
@@ -70,6 +71,7 @@
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/plugins/pace/pace.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/adminlte/dist/js/adminlte.min.js"></script>
+        <script src="<?php echo $BASE_URL ?>/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/functions.js?<?php echo VERSION_DATE ?>"></script>
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/common.js?<?php echo VERSION_DATE ?>"></script>
     </body>

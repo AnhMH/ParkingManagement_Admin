@@ -118,7 +118,7 @@ class SimpleFormHelper extends AppHelper {
                 
                 $html .= '<div class="form-group FormFromToContainer">';
                 $html .= $this->Form->label($id, $control['label']);
-                
+                $html .= "<div class='dateFromToInputs'>";
                 $html .= $this->Form->input($_from, array(
                     'label' => false,
                     'id' => $_from,
@@ -130,7 +130,7 @@ class SimpleFormHelper extends AppHelper {
                     'id' => $_to,
                     'value' => $_to_value,
                 ));
-                
+                $html .= '</div>';
                 if ($controlType == 'calendar_from_to') {
                     $html .= "<script>
                     document.addEventListener('DOMContentLoaded', function() {
@@ -146,8 +146,9 @@ class SimpleFormHelper extends AppHelper {
                     });
                     </script>";
                 }
-                
+                $html .= '<div class="clearfix"></div>';
                 $html .= '</div>';
+                
             } else {
                 if (isset($control['autocomplete']) && !empty($control['options'])) {
                     $v = json_encode(array_values($control['options']));

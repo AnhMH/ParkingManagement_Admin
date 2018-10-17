@@ -129,3 +129,27 @@ msgstr "Đóng"
 
 msgid "LABEL_UPDATE"
 msgstr "Chỉnh sửa"
+
+msgid "LABEL_ADMIN_NAME"
+msgstr "Nhân viên"
+
+msgid "LABEL_LOGIN_TIME"
+msgstr "Thời gian đăng nhập"
+
+msgid "LABEL_LOGOUT_TIME"
+msgstr "Thời gian đăng xuất"
+
+msgid "LABEL_PC_NAME"
+msgstr "Máy tính"
+
+msgid "LABEL_HOURS"
+msgstr "Số giờ"
+
+msgid "LABEL_ONE_DATE"
+msgstr "Một ngày"
+
+msgid "LABEL_MANY_DATE"
+msgstr "Nhiều ngày"
+
+msgid "LABEL_EXPORT_EXCEL"
+msgstr "Xuất file Excel"
