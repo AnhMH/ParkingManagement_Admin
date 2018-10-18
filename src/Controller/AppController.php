@@ -58,7 +58,12 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler', [
+                'viewClassMap' => [
+                    'xlsx' => 'CakeExcel.Excel',
+                ],
+            ]
+        );
         $this->loadComponent('Flash');
         $this->loadComponent('Cookie', [
             'expires' => Configure::read('Config.CookieExpires'),

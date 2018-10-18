@@ -53,7 +53,7 @@ class ErrorController extends AppController
      */
     public function beforeRender(Event $event)
     {
-        parent::beforeRender($event);
+//        parent::beforeRender($event);
 
         $this->viewBuilder()->setTemplatePath('Error');
     }

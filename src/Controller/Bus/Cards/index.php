@@ -1,4 +1,5 @@
 <?php
+
 use App\Lib\Api;
 use Cake\Core\Configure;
 
@@ -14,12 +15,10 @@ $this->Breadcrumb->setTitle($pageTitle)
 
 // Create search form
 $vehicles = $this->Common->arrayKeyValue(
-    Api::call(Configure::read('API.url_vehicles_all'), array()), 
-    'id', 
-    'name'
+        Api::call(Configure::read('API.url_vehicles_all'), array()), 'id', 'name'
 );
 $dataSearch = array(
-    'disable' => 0, 
+    'disable' => 0,
     'limit' => $pageSize
 );
 $this->SearchForm
@@ -53,7 +52,7 @@ $this->SearchForm
 $param = $this->getParams(array(
     'limit' => $pageSize,
     'disable' => 0
-));
+        ));
 
 $result = Api::call(Configure::read('API.url_cards_list'), $param);
 $total = !empty($result['total']) ? $result['total'] : 0;
@@ -116,6 +115,7 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_EXPORT_CARD'),
             'class' => 'btn btn-info btn-export-excel',
+            'data-param' => http_build_query($param),
         ));
 
 $this->set('pageTitle', $pageTitle);

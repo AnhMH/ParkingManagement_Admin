@@ -94,6 +94,7 @@ class ComposerStaticInitc5d80dc9110ba2a59bb72f3328462a6b
             'Cake\\Chronos\\' => 13,
             'Cake\\' => 5,
             'CakePHP\\' => 8,
+            'CakeExcel\\' => 10,
         ),
         'B' => 
         array (
@@ -257,6 +258,10 @@ class ComposerStaticInitc5d80dc9110ba2a59bb72f3328462a6b
         array (
             0 => __DIR__ . '/..' . '/cakephp/cakephp-codesniffer/CakePHP',
         ),
+        'CakeExcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dakota/cake-excel/src',
+        ),
         'Bake\\' => 
         array (
             0 => __DIR__ . '/..' . '/cakephp/bake/src',
@@ -304,6 +309,13 @@ class ComposerStaticInitc5d80dc9110ba2a59bb72f3328462a6b
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'J' => 

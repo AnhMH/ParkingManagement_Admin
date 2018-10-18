@@ -46,6 +46,7 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::extensions('xlsx');
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -58,7 +59,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     //$routes->connect('/login/*', ['controller' => 'Login', 'action' => 'index']);
-
+    
     $routes->connect('/', ['controller' => 'Top', 'action' => 'index']);
     $routes->connect('/logout', ['controller' => 'Login', 'action' => 'logout']);
     $routes->connect('/import', ['controller' => 'Orders', 'action' => 'import']);

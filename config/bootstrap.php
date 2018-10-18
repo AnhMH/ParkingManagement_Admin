@@ -210,6 +210,8 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
+Plugin::load('CakeExcel', ['bootstrap' => true, 'routes' => true]);
+
 /*
  * Custom
  */

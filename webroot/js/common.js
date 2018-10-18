@@ -28,6 +28,11 @@ $(document).ready(function ($) {
         location.href = baseUrl + '/' + controller + '/update';
         return false;
     });
+    $(".btn-export-excel").click(function () {
+        var p = $(this).attr('data-param');
+        location.href = baseUrl + '/' + controller + '.xlsx?' + p;
+        return false;
+    });
     $('.select2').select2();
 });
 
