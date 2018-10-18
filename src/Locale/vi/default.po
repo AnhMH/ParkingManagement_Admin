@@ -171,3 +171,12 @@ msgstr "Tiền thu tháng"
 
 msgid "LABEL_LIMIT2"
 msgstr "Hạn mức"
+
+msgid "LABEL_CARD_LIST"
+msgstr "Quản lý thẻ xe"
+
+msgid "LABEL_CARD_CODE"
+msgstr "Mã thẻ"
+
+msgid "MESSAGE_REQUIRED"
+msgstr "Giá trị này không được để trống"

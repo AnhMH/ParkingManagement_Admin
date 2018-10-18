@@ -17,6 +17,12 @@ Configure::write('API.url_admins_addupdate', 'admins/addupdate');
 Configure::write('API.url_admins_detail', 'admins/detail');
 Configure::write('API.url_admins_disable', 'admins/disable');
 
+Configure::write('API.url_cards_list', 'cards/list');
+Configure::write('API.url_cards_detail', 'cards/detail');
+Configure::write('API.url_cards_all', 'cards/all');
+Configure::write('API.url_cards_addupdate', 'cards/addupdate');
+Configure::write('API.url_cards_disable', 'cards/disable');
+
 Configure::write('API.url_vehicles_list', 'vehicles/list');
 Configure::write('API.url_vehicles_detail', 'vehicles/detail');
 Configure::write('API.url_vehicles_all', 'vehicles/all');
