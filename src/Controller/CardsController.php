@@ -20,4 +20,11 @@ class CardsController extends AppController {
     public function update($id = '') {
         include ('Bus/Cards/update.php');
     }
+    
+    /**
+     * Active
+     */
+    public function active() {
+        include ('Bus/Cards/active.php');
+    }
 }

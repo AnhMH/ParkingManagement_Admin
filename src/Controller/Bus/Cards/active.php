@@ -52,7 +52,7 @@ $this->SearchForm
 
 $param = $this->getParams(array(
     'limit' => $pageSize,
-    'disable' => 0
+    'disable' => 1
 ));
 
 $result = Api::call(Configure::read('API.url_cards_list'), $param);
@@ -62,20 +62,19 @@ $data = !empty($result['data']) ? $result['data'] : array();
 // Show data
 $this->SimpleTable
         ->setDataset($data)
-//        ->addColumn(array(
-//            'id' => 'item',
-//            'name' => 'items[]',
-//            'type' => 'checkbox',
-//            'value' => '{id}',
-//            'width' => 20,
-//        ))
+        ->addColumn(array(
+            'id' => 'item',
+            'name' => 'items[]',
+            'type' => 'checkbox',
+            'value' => '{id}',
+            'width' => 20,
+        ))
         ->addColumn(array(
             'id' => 'id',
             'title' => __('ID'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'empty' => '',
-            'width' => 50
         ))
         ->addColumn(array(
             'id' => 'code',
@@ -104,18 +103,8 @@ $this->SimpleTable
         ))
         ->addButton(array(
             'type' => 'submit',
-            'value' => __('LABEL_ADD_NEW'),
-            'class' => 'btn btn-success btn-addnew',
-        ))
-        ->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_IMPORT_CARD'),
-            'class' => 'btn btn-primary btn-import-excel',
-        ))
-        ->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_EXPORT_CARD'),
-            'class' => 'btn btn-info btn-export-excel',
+            'value' => __('LABEL_CARD_ACTIVE'),
+            'class' => 'btn btn-success btn-enable',
         ));
 
 $this->set('pageTitle', $pageTitle);

@@ -180,3 +180,12 @@ msgstr "Mã thẻ"
 
 msgid "MESSAGE_REQUIRED"
 msgstr "Giá trị này không được để trống"
+
+msgid "LABEL_CARD_ACTIVE"
+msgstr "Kích hoạt thẻ"
+
+msgid "LABEL_IMPORT_CARD"
+msgstr "Import danh sách thẻ"
+
+msgid "LABEL_EXPORT_CARD"
+msgstr "Export danh sách thẻ"

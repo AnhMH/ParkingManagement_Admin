@@ -78,7 +78,7 @@
                 </ul>
             </li>
             
-            <li class="treeview <?php if (in_array($controller, array('vehicles'))) echo ' active ' ?>">
+            <li class="treeview <?php if (in_array($controller, array('vehicles', 'cards'))) echo ' active ' ?>">
                 <a href="#">
                     <i class="fa fa-barcode"></i>
                     <span><?php echo __('LABEL_CARD_VEHICLE_MANAGEMENT'); ?></span>
@@ -95,6 +95,11 @@
                     <li class="<?php if (in_array($action, array('index')) && $controller == 'vehicles') echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/vehicles">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_VEHICLE_LIST');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('active')) && $controller == 'cards') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/cards/active">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_CARD_ACTIVE');?>
                         </a>
                     </li>
                 </ul>

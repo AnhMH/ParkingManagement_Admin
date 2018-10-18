@@ -19,7 +19,7 @@ $(document).ready(function ($) {
 
     // Buttons action
     $(".btn-disable").click(function () {
-        return disableEnableMulti('disable');
+        return disableEnableMulti('disable', true);
     });
     $(".btn-enable").click(function () {
         return disableEnableMulti('enable');
@@ -36,13 +36,16 @@ $(document).ready(function ($) {
  * @param {string} type
  * @returns {Boolean}
  */
-function disableEnableMulti(type) {
+function disableEnableMulti(type, mess) {
+    if (typeof mess == 'undefined') {
+        mess = false;
+    }
     var items = getItemsChecked('items[]', ',');
     if (items == '') {
         showAlertModal('Vui lòng chọn dữ liệu');
         return false;
     }
-    if (!confirm('Bạn có chắc chắn muốn xóa dữ liệu này?')) {
+    if (mess && !confirm('Bạn có chắc chắn muốn xóa dữ liệu này?')) {
         return false;
     }
     
