@@ -24,6 +24,13 @@ Configure::write('API.url_cards_addupdate', 'cards/addupdate');
 Configure::write('API.url_cards_disable', 'cards/disable');
 Configure::write('API.url_cards_import', 'cards/import');
 
+Configure::write('API.url_monthlycards_list', 'monthlycards/list');
+Configure::write('API.url_monthlycards_detail', 'monthlycards/detail');
+Configure::write('API.url_monthlycards_all', 'monthlycards/all');
+Configure::write('API.url_monthlycards_addupdate', 'monthlycards/addupdate');
+Configure::write('API.url_monthlycards_disable', 'monthlycards/disable');
+Configure::write('API.url_monthlycards_import', 'monthlycards/import');
+
 Configure::write('API.url_vehicles_list', 'vehicles/list');
 Configure::write('API.url_vehicles_detail', 'vehicles/detail');
 Configure::write('API.url_vehicles_all', 'vehicles/all');

@@ -104,6 +104,23 @@
                     </li>
                 </ul>
             </li>
+            
+            <li class="treeview <?php if (in_array($controller, array('monthlycards'))) echo ' active ' ?>">
+                <a href="#">
+                    <i class="fa fa-credit-card"></i>
+                    <span><?php echo __('LABEL_MONTHLYCARD_MANAGEMENT'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('index' , 'update', 'import'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/monthlycards">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_LIST');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

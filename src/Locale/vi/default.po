@@ -201,3 +201,18 @@ msgstr "File import"
 
 msgid "MESSAGE_ERROR_EXCEL_FORMAT"
 msgstr "Lỗi!! Không đúng định dạng file. Vui lòng import file excel"
+
+msgid "LABEL_CUSTOMER_NAME"
+msgstr "Tên KH"
+
+msgid "LABEL_START_DATE"
+msgstr "Ngày đăng ký"
+
+msgid "LABEL_END_DATE"
+msgstr "Ngày hết hạn"
+
+msgid "LABEL_MONTHLYCARD_LIST"
+msgstr "Thông tin vé tháng"
+
+msgid "LABEL_MONTHLYCARD_MANAGEMENT"
+msgstr "Quản lý vé tháng"
