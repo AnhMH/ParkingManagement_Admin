@@ -4,18 +4,68 @@ $excelCol = array(
     array(
         'col' => 'A',
         'title' => 'STT',
-        'key' => 'stt'
+        'key' => 'id'
     ),
     array(
         'col' => 'B',
         'title' => __('LABEL_CARD_CODE'),
-        'key' => 'code'
+        'key' => 'card_code'
     ),
     array(
         'col' => 'C',
+        'title' => __('LABEL_CAR_NUMBER'),
+        'key' => 'car_number'
+    ),
+    array(
+        'col' => 'D',
+        'title' => __('LABEL_CUSTOMER_NAME'),
+        'key' => 'customer_name'
+    ),
+    array(
+        'col' => 'E',
+        'title' => __('CMND'),
+        'key' => 'id_number'
+    ),
+    array(
+        'col' => 'F',
+        'title' => __('LABEL_EMAIL'),
+        'key' => 'email'
+    ),
+    array(
+        'col' => 'G',
+        'title' => __('LABEL_COMPANY'),
+        'key' => 'company'
+    ),
+    array(
+        'col' => 'H',
+        'title' => __('LABEL_ADDRESS'),
+        'key' => 'address'
+    ),
+    array(
+        'col' => 'I',
+        'title' => __('LABEL_BRAND'),
+        'key' => 'brand'
+    ),
+    array(
+        'col' => 'J',
+        'title' => __('LABEL_PARKING_FEE'),
+        'key' => 'parking_fee'
+    ),
+    array(
+        'col' => 'K',
         'title' => __('LABEL_VEHICLE_NAME'),
         'key' => 'vehicle_name'
-    )
+    ),
+    array(
+        'col' => 'L',
+        'title' => __('LABEL_START_DATE'),
+        'key' => 'startdate'
+    ),
+    array(
+        'col' => 'M',
+        'title' => __('LABEL_END_DATE'),
+        'key' => 'enddate'
+    ),
 );
 
 // Init

@@ -216,3 +216,18 @@ msgstr "Thông tin vé tháng"
 
 msgid "LABEL_MONTHLYCARD_MANAGEMENT"
 msgstr "Quản lý vé tháng"
+
+msgid "LABEL_CAR_NUMBER"
+msgstr "Biển số"
+
+msgid "LABEL_COMPANY"
+msgstr "Công ty"
+
+msgid "LABEL_BRAND"
+msgstr "Nhãn hiệu"
+
+msgid "LABEL_ADDRESS"
+msgstr "Địa chỉ"
+
+msgid "LABEL_PARKING_FEE"
+msgstr "Phí đậu xe"

@@ -25,7 +25,7 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
-            'id' => 'code',
+            'id' => 'card_code',
             'label' => __('LABEL_CARD_CODE')
         ))
         ->addElement(array(
@@ -81,7 +81,7 @@ $this->SimpleTable
         ))
         ->addColumn(array(
             'id' => 'car_number',
-            'title' => __('LABEL_CARD_CODE'),
+            'title' => __('LABEL_CAR_NUMBER'),
             'empty' => ''
         ))
         ->addColumn(array(
