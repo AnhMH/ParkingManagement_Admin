@@ -189,3 +189,15 @@ msgstr "Import danh sách thẻ"
 
 msgid "LABEL_EXPORT_CARD"
 msgstr "Export danh sách thẻ"
+
+msgid "MESSAGE_IMPORT_FILE"
+msgstr "Bạn chưa chọn file import"
+
+msgid "LABEL_DOWNLOAD_FILE_SAMPLE"
+msgstr "Tải file Excel mẫu"
+
+msgid "LABEL_FILE_IMPORT"
+msgstr "File import"
+
+msgid "MESSAGE_ERROR_EXCEL_FORMAT"
+msgstr "Lỗi!! Không đúng định dạng file. Vui lòng import file excel"

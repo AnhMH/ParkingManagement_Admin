@@ -28,6 +28,10 @@ $(document).ready(function ($) {
         location.href = baseUrl + '/' + controller + '/update';
         return false;
     });
+    $(".btn-import-excel").click(function () {
+        location.href = baseUrl + '/' + controller + '/import';
+        return false;
+    });
     $(".btn-export-excel").click(function () {
         var p = $(this).attr('data-param');
         location.href = baseUrl + '/' + controller + '.xlsx?' + p;
@@ -190,4 +194,13 @@ function is_image_type(input) {
  */
 function onlyUnique(value, index, self) { 
     return self.indexOf(value) === index;
+}
+
+/**
+ * Download csv file sample
+ */
+function downloadFileSample(name) {
+    var url = baseUrl + '/samplefiles/' + name;
+    window.location = url;
+    return false;
 }

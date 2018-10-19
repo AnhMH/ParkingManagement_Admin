@@ -87,7 +87,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if (in_array($action, array('index' , 'update')) && $controller == 'cards') echo ' active ' ?>">
+                    <li class="<?php if (in_array($action, array('index' , 'update', 'import')) && $controller == 'cards') echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/cards">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_CARD_LIST');?>
                         </a>

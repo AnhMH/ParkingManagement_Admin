@@ -22,6 +22,7 @@ Configure::write('API.url_cards_detail', 'cards/detail');
 Configure::write('API.url_cards_all', 'cards/all');
 Configure::write('API.url_cards_addupdate', 'cards/addupdate');
 Configure::write('API.url_cards_disable', 'cards/disable');
+Configure::write('API.url_cards_import', 'cards/import');
 
 Configure::write('API.url_vehicles_list', 'vehicles/list');
 Configure::write('API.url_vehicles_detail', 'vehicles/detail');

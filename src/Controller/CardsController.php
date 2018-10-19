@@ -27,4 +27,11 @@ class CardsController extends AppController {
     public function active() {
         include ('Bus/Cards/active.php');
     }
+    
+    /**
+     * Import
+     */
+    public function import() {
+        include ('Bus/Cards/import.php');
+    }
 }
