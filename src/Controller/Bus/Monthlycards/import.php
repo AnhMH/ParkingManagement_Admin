@@ -1,14 +1,15 @@
 <?php
+
 use App\Lib\Api;
 use Cake\Core\Configure;
 
 // Create breadcrumb
 $pageTitle = __('LABEL_IMPORT_CARD');
-$listPageUrl = h($this->BASE_URL . '/cards');
+$listPageUrl = h($this->BASE_URL . '/monthlycards');
 $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'link' => $listPageUrl,
-            'name' => __('LABEL_CARD_LIST'),
+            'name' => __('LABEL_MONTHLYCARD_LIST'),
         ))
         ->add(array(
             'name' => $pageTitle,
@@ -22,7 +23,7 @@ if ($this->request->is('post')) {
             $data[$key] = trim($value);
         }
     }
-    
+
     if (is_uploaded_file($data['file']['tmp_name'])) {
         // Check file type
         $mimes = array('application/octet-stream');
@@ -33,40 +34,68 @@ if ($this->request->is('post')) {
             $excelCol = array(
                 array(
                     'col' => 'A',
-                    'title' => 'STT',
-                    'key' => 'stt'
+                    'title' => __('LABEL_CARD_CODE'),
+                    'key' => 'card_code'
                 ),
                 array(
                     'col' => 'B',
-                    'title' => __('LABEL_CARD_CODE'),
-                    'key' => 'code'
+                    'title' => __('LABEL_CAR_NUMBER'),
+                    'key' => 'car_number'
                 ),
                 array(
                     'col' => 'C',
+                    'title' => __('LABEL_CUSTOMER_NAME'),
+                    'key' => 'customer_name'
+                ),
+                array(
+                    'col' => 'D',
+                    'title' => __('CMND'),
+                    'key' => 'id_number'
+                ),
+                array(
+                    'col' => 'E',
+                    'title' => __('LABEL_EMAIL'),
+                    'key' => 'email'
+                ),
+                array(
+                    'col' => 'F',
+                    'title' => __('LABEL_COMPANY'),
+                    'key' => 'company'
+                ),
+                array(
+                    'col' => 'G',
+                    'title' => __('LABEL_ADDRESS'),
+                    'key' => 'address'
+                ),
+                array(
+                    'col' => 'H',
+                    'title' => __('LABEL_BRAND'),
+                    'key' => 'brand'
+                ),
+                array(
+                    'col' => 'I',
+                    'title' => __('LABEL_PARKING_FEE'),
+                    'key' => 'parking_fee'
+                ),
+                array(
+                    'col' => 'J',
                     'title' => __('LABEL_VEHICLE_NAME'),
                     'key' => 'vehicle_name'
-                )
+                ),
+                array(
+                    'col' => 'K',
+                    'title' => __('LABEL_START_DATE'),
+                    'key' => 'start_date'
+                ),
+                array(
+                    'col' => 'L',
+                    'title' => __('LABEL_END_DATE'),
+                    'key' => 'end_date'
+                ),
             );
-            $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
-            $objPHPExcel = $objReader->load($data['file']['tmp_name']);
-            $worksheetInfo = $objReader->listWorksheetInfo($data['file']['tmp_name']);
-            $activeSheet = $objPHPExcel->getActiveSheet();
-            $totalColumns = !empty($worksheetInfo[0]['totalColumns']) ? $worksheetInfo[0]['totalColumns'] : '';
-            $totalRows = !empty($worksheetInfo[0]['totalRows']) ? $worksheetInfo[0]['totalRows'] : '';
-            if (!empty($totalColumns) && !empty($totalRows) && $totalRows > 1) {
-                for ($i = 1; $i <= $totalRows; $i++) {
-                    if ($i == 1) {
-                        continue;
-                    }
-                    $tmp = array();
-                    foreach ($excelCol as $col) {
-                        $tmp[$col['key']] = $activeSheet->getCell($col['col'].$i)->getValue();
-                    }
-                    $excelData[] = $tmp;
-                }
-            }            
-            $data = Api::call(Configure::read('API.url_cards_import'), array(
-                'data' => json_encode($excelData)
+            $excelData = $this->get_excel_data($data['file']['tmp_name'], $excelCol);
+            $data = Api::call(Configure::read('API.url_monthlycards_import'), array(
+                        'data' => json_encode($excelData)
             ));
             if (empty($data) || Api::getError() || !$data) {
                 $this->Flash->error(__('MESSAGE_SYSTEM_ERROR'));

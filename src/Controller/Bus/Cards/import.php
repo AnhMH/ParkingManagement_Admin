@@ -47,24 +47,7 @@ if ($this->request->is('post')) {
                     'key' => 'vehicle_name'
                 )
             );
-            $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
-            $objPHPExcel = $objReader->load($data['file']['tmp_name']);
-            $worksheetInfo = $objReader->listWorksheetInfo($data['file']['tmp_name']);
-            $activeSheet = $objPHPExcel->getActiveSheet();
-            $totalColumns = !empty($worksheetInfo[0]['totalColumns']) ? $worksheetInfo[0]['totalColumns'] : '';
-            $totalRows = !empty($worksheetInfo[0]['totalRows']) ? $worksheetInfo[0]['totalRows'] : '';
-            if (!empty($totalColumns) && !empty($totalRows) && $totalRows > 1) {
-                for ($i = 1; $i <= $totalRows; $i++) {
-                    if ($i == 1) {
-                        continue;
-                    }
-                    $tmp = array();
-                    foreach ($excelCol as $col) {
-                        $tmp[$col['key']] = $activeSheet->getCell($col['col'].$i)->getValue();
-                    }
-                    $excelData[] = $tmp;
-                }
-            }            
+            $excelData = $this->get_excel_data($data['file']['tmp_name'], $excelCol);
             $data = Api::call(Configure::read('API.url_cards_import'), array(
                 'data' => json_encode($excelData)
             ));

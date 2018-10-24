@@ -4,14 +4,14 @@
                 <div class="box-body-customer">
                     <h4><?php echo __('LABEL_FILE_IMPORT') ?></h4>
                     <div class="box-main">
-                        <form method="post" action="<?php echo $BASE_URL ?>/cards/import" enctype="multipart/form-data" >
+                        <form method="post" action="<?php echo $BASE_URL ?>/monthlycards/import" enctype="multipart/form-data" >
                             <input type="hidden" name="_csrfToken" value="<?php echo $this->request->getParam('_csrfToken'); ?>"/>
                             <div class="form-group">
                                 <input id="file" type="file" name="file" class="inputfile icsv_file"/>
                             </div>
                             <div class="form-group button-group">
                                 <input type="submit" value="<?php echo __('LABEL_SAVE');?>" class="btn btn-primary">
-                                <a href="javascript:;" onclick="return downloadFileSample('cards.xlsx')" class="btn btn-info"><?php echo __('LABEL_DOWNLOAD_FILE_SAMPLE');?></a>
+                                <a href="javascript:;" onclick="return downloadFileSample('monthlycards.xlsx')" class="btn btn-info"><?php echo __('LABEL_DOWNLOAD_FILE_SAMPLE');?></a>
                             </div>
                         </form>
                     </div>

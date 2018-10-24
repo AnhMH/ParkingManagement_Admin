@@ -3,7 +3,7 @@
 $excelCol = array(
     array(
         'col' => 'A',
-        'title' => 'STT',
+        'title' => 'ID',
         'key' => 'id'
     ),
     array(

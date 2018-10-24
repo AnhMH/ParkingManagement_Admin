@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -29,18 +31,16 @@ use App\Lib\Api;
  *
  * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller
-{
+class AppController extends Controller {
 
     /** @var object $AppUI Session infomation of user logged. */
     public $AppUI = null;
-    
+
     /** @var object $controller Controller name. */
     public $controller = null;
 
     /** @var object $action Action name. */
     public $action = null;
-    
     public $current_url = '';
     public $BASE_URL = '';
     public $BASE_URL_FRONT = '';
@@ -54,15 +54,14 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize() {
         parent::initialize();
 
         $this->loadComponent('RequestHandler', [
-                'viewClassMap' => [
-                    'xlsx' => 'CakeExcel.Excel',
-                ],
-            ]
+            'viewClassMap' => [
+                'xlsx' => 'CakeExcel.Excel',
+            ],
+                ]
         );
         $this->loadComponent('Flash');
         $this->loadComponent('Cookie', [
@@ -85,11 +84,11 @@ class AppController extends Controller
             ),
             'sessionKey' => 'Auth.ParkingManagement'
         ));
-        
+
         // set session ckeditor
         $this->request->session()->write('ckeditor', Configure::read('Config.CKeditor'));
     }
-    
+
     /**
      * Before filter event
      * @param Event $event
@@ -109,20 +108,19 @@ class AppController extends Controller
             }
         }
         parent::beforeFilter($event);
-        
+
         $this->controller = strtolower($this->request->params['controller']);
         $this->action = strtolower($this->request->params['action']);
         $this->current_url = Router::url($this->here, true);
         $this->BASE_URL = Router::fullBaseUrl() . USE_SUB_DIRECTORY;
         $this->BASE_URL_FRONT = Configure::read('Front.Host');
-        
+
         // Redirect Auth
         if ($this->isAuthorized()) {
             if ($this->controller == 'login' && $this->action == 'index') {
                 return $this->redirect('/');
             }
         }
-        
     }
 
     /**
@@ -133,13 +131,13 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event) {
         parent::beforeRender($event);
-        
+
         // Breadcrumb
         if (!empty($this->Breadcrumb->get())) {
             $this->set('breadcrumbTitle', $this->Breadcrumb->getTitle());
             $this->set('breadcrumb', $this->Breadcrumb->get());
         }
-        
+
         // Form / Table
         if (!empty($this->SearchForm->get())) {
             $this->set('searchForm', $this->SearchForm->get());
@@ -150,12 +148,12 @@ class AppController extends Controller
         if (!empty($this->SimpleTable->get())) {
             $this->set('table', $this->SimpleTable->get());
         }
-        
+
         // Auth
         if (isset($this->Auth) && $this->isAuthorized()) {
             $this->set('AppUI', $this->Auth->user());
         }
-        
+
         // Set common param
         $this->set('controller', $this->controller);
         $this->set('action', $this->action);
@@ -167,7 +165,7 @@ class AppController extends Controller
 
         // Set default layout
         $this->setLayout();
-        
+
         // Check to use common view
         $templatePath = $this->viewBuilder()->templatePath();
         $viewName = $this->action . '.ctp';
@@ -177,7 +175,7 @@ class AppController extends Controller
             $this->viewBuilder()->templatePath('Common');
         }
     }
-    
+
     /**
      * Commont function check user is Authorized..
      * 
@@ -216,7 +214,7 @@ class AppController extends Controller
         }
         return $params;
     }
-    
+
     /**
      * Commont function set layout for view.
      */
@@ -231,7 +229,7 @@ class AppController extends Controller
             $this->viewBuilder()->layout('default');
         }
     }
-    
+
     /**
      * Commont function creater message notification.
      * 
@@ -266,7 +264,7 @@ class AppController extends Controller
             }
         }
     }
-    
+
     /**
      * Crop image
      * 
@@ -279,7 +277,7 @@ class AppController extends Controller
      */
     public function crop_image($mime_type, $image_path, $x, $y, $w, $h) {
         $mime_type = strtolower($mime_type);
-        
+
         if ($mime_type == 'image/png') {
             // Convert PNG
             $img_r = imagecreatefrompng($image_path);
@@ -296,7 +294,7 @@ class AppController extends Controller
             // Not support
         }
     }
-    
+
     /**
      * Crop image from base64
      * 
@@ -312,12 +310,12 @@ class AppController extends Controller
         list($base64_type, $base64_data) = explode(';', $base64);
         $mime_type = strtolower(str_replace('data:', '', $base64_type));
         list(, $data) = explode(',', $base64_data);
-        
+
         if ($mime_type == 'image/png' || $mime_type == 'image/jpeg' || $mime_type == 'image/jpg') {
             $img_r = imagecreatefromstring(base64_decode($data));
             $dst_r = ImageCreateTrueColor($w, $h);
             imagecopyresampled($dst_r, $img_r, 0, 0, $x, $y, $w, $h, $w, $h);
-            
+
             if ($mime_type == 'image/png') {
                 $ext = 'png';
                 $image_path = $image_path . '.' . $ext;
@@ -330,7 +328,7 @@ class AppController extends Controller
         }
         return false;
     }
-    
+
     /**
      * Create Curl file upload from base64 string
      * @param string $base64
@@ -343,7 +341,7 @@ class AppController extends Controller
         try {
             list(, $base64_data) = explode(';', $base64);
             list(, $data) = explode(',', $base64_data);
-            
+
             file_put_contents($file_path, base64_decode($data));
             return new \CurlFile($file_path, $type, $name);
         } catch (\Exception $ex) {
@@ -379,7 +377,7 @@ class AppController extends Controller
         }
         return $typeString;
     }
-    
+
     /**
      * Get base64 data from URL
      * 
@@ -394,5 +392,34 @@ class AppController extends Controller
         }
         return $base64;
     }
-    
+
+    /**
+     * Get Excel data
+     * 
+     * @param string $url
+     * @return string | boolean
+     */
+    public function get_excel_data($file, $excelCol) {
+        $excelData = array();
+        $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+        $objPHPExcel = $objReader->load($file);
+        $worksheetInfo = $objReader->listWorksheetInfo($file);
+        $activeSheet = $objPHPExcel->getActiveSheet();
+        $totalColumns = !empty($worksheetInfo[0]['totalColumns']) ? $worksheetInfo[0]['totalColumns'] : '';
+        $totalRows = !empty($worksheetInfo[0]['totalRows']) ? $worksheetInfo[0]['totalRows'] : '';
+        if (!empty($totalColumns) && !empty($totalRows) && $totalRows > 1) {
+            for ($i = 1; $i <= $totalRows; $i++) {
+                if ($i == 1) {
+                    continue;
+                }
+                $tmp = array();
+                foreach ($excelCol as $col) {
+                    $tmp[$col['key']] = $activeSheet->getCell($col['col'] . $i)->getValue();
+                }
+                $excelData[] = $tmp;
+            }
+        }
+        return $excelData;
+    }
+
 }
