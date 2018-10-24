@@ -6,8 +6,13 @@ $this->doGeneralAction();
 $pageSize = Configure::read('Config.PageSize');
 
 // Create breadcrumb
-$pageTitle = __('LABEL_CARD_LIST');
+$pageTitle = __('LABEL_MONTHLYCARD_ACTIVE');
+$listPageUrl = h($this->BASE_URL . '/monthlycards');
 $this->Breadcrumb->setTitle($pageTitle)
+        ->add(array(
+            'link' => $listPageUrl,
+            'name' => __('LABEL_MONTHLYCARD_LIST'),
+        ))
         ->add(array(
             'name' => $pageTitle,
         ));
@@ -19,7 +24,6 @@ $vehicles = $this->Common->arrayKeyValue(
     'name'
 );
 $dataSearch = array(
-    'disable' => 0, 
     'limit' => $pageSize
 );
 $this->SearchForm
@@ -55,7 +59,7 @@ $param = $this->getParams(array(
     'disable' => 1
 ));
 
-$result = Api::call(Configure::read('API.url_cards_list'), $param);
+$result = Api::call(Configure::read('API.url_monthlycards_list'), $param);
 $total = !empty($result['total']) ? $result['total'] : 0;
 $data = !empty($result['data']) ? $result['data'] : array();
 
@@ -75,23 +79,49 @@ $this->SimpleTable
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'empty' => '',
+            'width' => 50
         ))
         ->addColumn(array(
-            'id' => 'code',
+            'id' => 'card_code',
             'title' => __('LABEL_CARD_CODE'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'stt',
-            'title' => __('STT'),
+            'id' => 'car_number',
+            'title' => __('LABEL_CAR_NUMBER'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'customer_name',
+            'title' => __('LABEL_CUSTOMER_NAME'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'id_number',
+            'title' => __('CMND'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'email',
+            'title' => __('LABEL_EMAIL'),
             'empty' => ''
         ))
         ->addColumn(array(
             'id' => 'vehicle_id',
             'title' => __('LABEL_VEHICLE_NAME'),
             'rules' => $vehicles,
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'startdate',
+            'title' => __('LABEL_START_DATE'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'enddate',
+            'title' => __('LABEL_END_DATE'),
             'empty' => ''
         ))
         ->addColumn(array(

@@ -6,8 +6,13 @@ $this->doGeneralAction();
 $pageSize = Configure::read('Config.PageSize');
 
 // Create breadcrumb
-$pageTitle = __('LABEL_CARD_LIST');
+$pageTitle = __('LABEL_CARD_ACTIVE');
+$listPageUrl = h($this->BASE_URL . '/cards');
 $this->Breadcrumb->setTitle($pageTitle)
+        ->add(array(
+            'link' => $listPageUrl,
+            'name' => __('LABEL_CARD_LIST'),
+        ))
         ->add(array(
             'name' => $pageTitle,
         ));

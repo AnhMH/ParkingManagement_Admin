@@ -231,3 +231,6 @@ msgstr "Địa chỉ"
 
 msgid "LABEL_PARKING_FEE"
 msgstr "Phí đậu xe"
+
+msgid "LABEL_MONTHLYCARD_ACTIVE"
+msgstr "Kích hoạt thẻ tháng"
