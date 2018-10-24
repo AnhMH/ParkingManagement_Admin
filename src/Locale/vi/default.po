@@ -234,3 +234,6 @@ msgstr "Phí đậu xe"
 
 msgid "LABEL_MONTHLYCARD_ACTIVE"
 msgstr "Kích hoạt thẻ tháng"
+
+msgid "LABEL_TOTAL_DATE"
+msgstr "Số ngày"

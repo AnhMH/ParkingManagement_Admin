@@ -34,10 +34,6 @@ $this->SearchForm
             'label' => __('LABEL_CARD_CODE')
         ))
         ->addElement(array(
-            'id' => 'stt',
-            'label' => __('STT')
-        ))
-        ->addElement(array(
             'id' => 'vehicle_id',
             'label' => __('LABEL_VEHICLE_NAME'),
             'options' => $vehicles,
@@ -86,6 +82,11 @@ $this->SimpleTable
             'title' => __('LABEL_CARD_CODE'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'total_date',
+            'title' => __('LABEL_TOTAL_DATE'),
             'empty' => ''
         ))
         ->addColumn(array(

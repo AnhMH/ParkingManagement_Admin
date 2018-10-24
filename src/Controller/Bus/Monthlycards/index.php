@@ -25,7 +25,7 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
-            'id' => 'card_code',
+            'id' => 'code',
             'label' => __('LABEL_CARD_CODE')
         ))
         ->addElement(array(
@@ -77,6 +77,11 @@ $this->SimpleTable
             'title' => __('LABEL_CARD_CODE'),
             'type' => 'link',
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'total_date',
+            'title' => __('LABEL_TOTAL_DATE'),
             'empty' => ''
         ))
         ->addColumn(array(
