@@ -255,3 +255,33 @@ msgstr "Cập nhật vé"
 
 msgid "LABEL_MONTHLYCARD_CHANGE"
 msgstr "Mất thẻ / Đổi mã thẻ"
+
+msgid "LABEL_MONTHLYCARD_VIEWLOG"
+msgstr "Xem nhật ký vé tháng"
+
+msgid "LABEL_ALL"
+msgstr "Tất cả"
+
+msgid "LABEL_LOG_TYPE_MONTHLYCARD_CREATE"
+msgstr "Tạo mới vé tháng"
+
+msgid "LABEL_LOG_TYPE_MONTHLYCARD_UPDATE"
+msgstr "Chỉnh sửa vé tháng"
+
+msgid "LABEL_LOG_TYPE_MONTHLYCARD_DELETE"
+msgstr "Xóa vé tháng"
+
+msgid "LABEL_LOG_TYPE_MONTHLYCARD_IMPORT"
+msgstr "Import danh sách vé tháng"
+
+msgid "LABEL_LOG_TYPE_MONTHLYCARD_EXPORT"
+msgstr "Export danh sách vé tháng"
+
+msgid "LABEL_SYSTEM_LOG_TYPE"
+msgstr "Thao tác"
+
+msgid "LABEL_CREATED"
+msgstr "Ngày tạo"
+
+msgid "LABEL_MONTHLYCARD_ID"
+msgstr "ID vé"

@@ -55,4 +55,11 @@ class MonthlycardsController extends AppController {
     public function updatecode($id = '') {
         include ('Bus/Monthlycards/updatecode.php');
     }
+    
+    /**
+     * View log
+     */
+    public function viewlog() {
+        include ('Bus/Monthlycards/viewlog.php');
+    }
 }

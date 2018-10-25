@@ -34,6 +34,7 @@ $(document).ready(function ($) {
     });
     $(".btn-export-excel").click(function () {
         var p = $(this).attr('data-param');
+        p += "&export_data=1";
         if (action != 'index') {
             location.href = baseUrl + '/' + controller + '/' + action + '.xlsx?' + p;
         } else {

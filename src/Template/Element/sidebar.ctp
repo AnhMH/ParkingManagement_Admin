@@ -114,6 +114,11 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('viewlog'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/monthlycards/viewlog">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_VIEWLOG');?>
+                        </a>
+                    </li>
                     <li class="<?php if (in_array($action, array('index' , 'update', 'import'))) echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/monthlycards">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_LIST');?>

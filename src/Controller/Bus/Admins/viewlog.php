@@ -41,7 +41,7 @@ $this->SearchForm
 
 $param = $this->getParams(array(
     'limit' => $pageSize,
-    'type' => 1
+    'type' => Configure::read('Config.systemLogType')['ADMIN_LOGIN']
 ));
 
 $result = Api::call(Configure::read('API.url_systemlogs_list'), $param);

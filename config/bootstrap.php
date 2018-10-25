@@ -226,6 +226,23 @@ Configure::write('Config.searchPageSize', array(
     80 => 80,
     100 => 100,
 ));
+Configure::write('Config.systemLogType', array(
+    'ADMIN_LOGIN' => 1,
+    'ADMIN_LOGOUT' => 2,
+    'ADMIN_UPDATE' => 3,
+    'ADMIN_CREATE' => 4,
+    'ADMIN_DELETE' => 5,
+    
+    'ADMIN_TYPE_UPDATE' => 6,
+    'ADMIN_TYPE_CREATE' => 7,
+    'ADMIN_TYPE_DELETE' => 8,
+    
+    'MONTHLYCARD_CREATE' => 9,
+    'MONTHLYCARD_UPDATE' => 10,
+    'MONTHLYCARD_DELETE' => 11,
+    'MONTHLYCARD_IMPORT' => 12,
+    'MONTHLYCARD_EXPORT' => 13,
+));
 Configure::write('Config.searchStatus', array(
     0 => __('LABEL_ACTIVE'),
     1 => __('LABEL_INACTIVE'),
