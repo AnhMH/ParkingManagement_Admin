@@ -249,3 +249,9 @@ msgstr "Gia hạn cộng dồn ngày"
 
 msgid "LABEL_RENEWAL"
 msgstr "Gia hạn"
+
+msgid "LABEL_UPDATE_CODE"
+msgstr "Cập nhật vé"
+
+msgid "LABEL_MONTHLYCARD_CHANGE"
+msgstr "Mất thẻ / Đổi mã thẻ"

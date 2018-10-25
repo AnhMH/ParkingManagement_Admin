@@ -124,6 +124,11 @@
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_RENEWAL');?>
                         </a>
                     </li>
+                    <li class="<?php if (in_array($action, array('disablelist', 'updatecode'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/monthlycards/disablelist">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_CHANGE');?>
+                        </a>
+                    </li>
                     <li class="<?php if (in_array($action, array('active'))) echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/monthlycards/active">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLYCARD_ACTIVE');?>

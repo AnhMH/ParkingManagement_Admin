@@ -41,4 +41,18 @@ class MonthlycardsController extends AppController {
     public function renewal() {
         include ('Bus/Monthlycards/renewal.php');
     }
+    
+    /**
+     * Change code
+     */
+    public function disablelist() {
+        include ('Bus/Monthlycards/disablelist.php');
+    }
+    
+    /**
+     * Update code
+     */
+    public function updatecode($id = '') {
+        include ('Bus/Monthlycards/updatecode.php');
+    }
 }
