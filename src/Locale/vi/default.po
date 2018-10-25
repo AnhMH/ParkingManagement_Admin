@@ -237,3 +237,15 @@ msgstr "Kích hoạt thẻ tháng"
 
 msgid "LABEL_TOTAL_DATE"
 msgstr "Số ngày"
+
+msgid "LABEL_MONTHLYCARD_RENEWAL"
+msgstr "Gia hạn - Thông tin hết hạn"
+
+msgid "LABEL_RENEWAL_BY_DATE_SELECTED"
+msgstr "Gia hạn theo ngày đã chọn"
+
+msgid "LABEL_RENEWAL_BY_DAYS"
+msgstr "Gia hạn cộng dồn ngày"
+
+msgid "LABEL_RENEWAL"
+msgstr "Gia hạn"

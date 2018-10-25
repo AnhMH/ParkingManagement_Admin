@@ -30,6 +30,7 @@ Configure::write('API.url_monthlycards_all', 'monthlycards/all');
 Configure::write('API.url_monthlycards_addupdate', 'monthlycards/addupdate');
 Configure::write('API.url_monthlycards_disable', 'monthlycards/disable');
 Configure::write('API.url_monthlycards_import', 'monthlycards/import');
+Configure::write('API.url_monthlycards_renewal', 'monthlycards/renewal');
 
 Configure::write('API.url_vehicles_list', 'vehicles/list');
 Configure::write('API.url_vehicles_detail', 'vehicles/detail');

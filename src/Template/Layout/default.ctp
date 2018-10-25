@@ -62,6 +62,7 @@
             var baseUrl = '<?php echo $BASE_URL; ?>';
             var referer = "<?php echo $referer; ?>";
             var url = "<?php echo $url; ?>";
+            var _csrfToken = "<?php echo $this->request->getParam('_csrfToken'); ?>"
         </script>
 
         <script type="text/javascript" src="<?php echo $BASE_URL ?>/js/jquery-2.1.3.min.js"></script>

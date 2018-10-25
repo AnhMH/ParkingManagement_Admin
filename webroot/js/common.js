@@ -34,7 +34,26 @@ $(document).ready(function ($) {
     });
     $(".btn-export-excel").click(function () {
         var p = $(this).attr('data-param');
-        location.href = baseUrl + '/' + controller + '.xlsx?' + p;
+        if (action != 'index') {
+            location.href = baseUrl + '/' + controller + '/' + action + '.xlsx?' + p;
+        } else {
+            location.href = baseUrl + '/' + controller + '.xlsx?' + p;
+        }
+        return false;
+    });
+    $(".btn-renewal").click(function () {
+        var items = getItemsChecked('items[]', ',');
+        if (items == '') {
+            showAlertModal('Vui lòng chọn dữ liệu');
+            return false;
+        }
+        var type = $(this).attr('data-type');
+        $('.renewal-type-body').hide();
+        $('.renewal-by-' + type).show();
+        $('#modal_renewal').modal();
+        $('#btn-modal-renewal').unbind('click').bind('click', function(){
+            monthlyCardRenewal(type, items);
+        });
         return false;
     });
     $('.select2').select2();
@@ -203,4 +222,55 @@ function downloadFileSample(name) {
     var url = baseUrl + '/samplefiles/' + name;
     window.location = url;
     return false;
+}
+
+/**
+ * Monthlycard renewal
+ */
+function monthlyCardRenewal(type, ids) {
+    var param = [];
+    if (type == 'date-selected') {
+        var dateFrom = $('#renewal_date_from').val();
+        var dateTo = $('#renewal_date_to').val();
+        if (dateFrom == '') {
+            alert('Vui lòng chọn ngày bắt đầu');
+            return false;
+        }
+        if (dateTo == '') {
+            alert('Vui lòng chọn ngày kết thúc');
+            return false;
+        }
+        param = {
+           'date_from': dateFrom,
+           'date_to': dateTo,
+           'ids': ids,
+           '_csrfToken': _csrfToken
+        };
+    } else {
+        var days = $('#renewal_days').val();
+        if (days == '') {
+            alert('Vui lòng nhập số ngày cần gia hạn');
+            return false;
+        }
+        param = {
+            'days': days,
+            'ids': ids,
+            '_csrfToken': _csrfToken
+        };
+    }
+    $.ajax({
+        type: "POST",
+        url: baseUrl + '/ajax/monthlycardrenewal',
+        data: param,
+        success: function (response) {
+            if (response == 'OK') {
+                location.reload();
+            } else {
+                alert(response);
+            }
+        },
+        complete: function(){
+            
+        }
+    });
 }

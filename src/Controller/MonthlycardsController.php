@@ -34,4 +34,11 @@ class MonthlycardsController extends AppController {
     public function import() {
         include ('Bus/Monthlycards/import.php');
     }
+    
+    /**
+     * Renewal
+     */
+    public function renewal() {
+        include ('Bus/Monthlycards/renewal.php');
+    }
 }

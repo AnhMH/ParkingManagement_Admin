@@ -14,4 +14,12 @@ class AjaxController extends AppController {
         parent::initialize();
        // $this->autoRender = false;
     }
+    
+    /**
+     * Monthlycard renewal
+     */
+    public function monthlycardrenewal() {
+        $this->autoRender = false;
+        include ('Bus/Ajax/monthlycardrenewal.php');
+    }
 }
