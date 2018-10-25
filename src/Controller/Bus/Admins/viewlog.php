@@ -85,6 +85,7 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_EXPORT_EXCEL'),
             'class' => 'btn btn-primary btn-export-excel',
+            'data-param' => http_build_query($param)
         ));
 $this->set('pageTitle', $pageTitle);
 $this->set('total', $total);
