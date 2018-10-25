@@ -77,14 +77,14 @@ if (!empty($data)) {
         $detail = json_decode($v['detail'], true);
         $tmp = array(
             'id' => $v['id'],
-            'type' => $v['type'],
+            'type' => !empty($logType[$v['type']]) ? $logType[$v['type']] : '',
             'created' => !empty($v['created']) ? date('Y-m-d H:i', $v['created']) : '-',
             'admin_name' => $v['admin_name'],
             'monthlycard_id' => !empty($detail['id']) ? $detail['id'] : '',
             'card_code' => !empty($detail['card_code']) ? $detail['card_code'] : '',
             'car_number' => !empty($detail['car_number']) ? $detail['car_number'] : '',
-            'start_date' => !empty($detail['start_date']) ? date('Y-m-d H:i', $detail['start_date']) : '',
-            'end_date' => !empty($detail['end_date']) ? date('Y-m-d H:i', $detail['end_date']) : '',
+            'start_date' => !empty($detail['start_date']) ? date('Y-m-d', $detail['start_date']) : '',
+            'end_date' => !empty($detail['end_date']) ? date('Y-m-d', $detail['end_date']) : '',
             'customer_name' => !empty($detail['customer_name']) ? $detail['customer_name'] : '',
             'id_number' => !empty($detail['id_number']) ? $detail['id_number'] : '',
             'email' => !empty($detail['email']) ? $detail['email'] : '',
@@ -107,7 +107,6 @@ $this->SimpleTable
         ->addColumn(array(
             'id' => 'type',
             'title' => __('LABEL_SYSTEM_LOG_TYPE'),
-            'rules' => $logType,
             'empty' => '',
             'width' => 200
         ))
@@ -182,9 +181,8 @@ $this->SimpleTable
             'width' => 100
         ))
         ->addColumn(array(
-            'id' => 'vehicle_id',
+            'id' => 'vehicle_name',
             'title' => __('LABEL_VEHICLE_NAME'),
-            'rules' => $vehicles,
             'empty' => '',
             'width' => 100
         ))
@@ -192,9 +190,10 @@ $this->SimpleTable
             'type' => 'submit',
             'value' => __('LABEL_EXPORT_EXCEL'),
             'class' => 'btn btn-primary btn-export-excel',
+            'data-param' => http_build_query($param)
         ));
 $this->set('pageTitle', $pageTitle);
 $this->set('total', $total);
 $this->set('param', $param);
 $this->set('limit', $param['limit']);
-$this->set('data', $data);
+$this->set('data', $listData);
