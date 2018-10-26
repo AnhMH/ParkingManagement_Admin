@@ -141,6 +141,23 @@
                     </li>
                 </ul>
             </li>
+            
+            <li class="treeview <?php if (in_array($controller, array('settings'))) echo ' active ' ?>">
+                <a href="#">
+                    <i class="fa fa fa-gear"></i>
+                    <span><?php echo __('LABEL_SYSTEM_SETTING'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('permission'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/settings/permission">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_SETTING_PERMISSION');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

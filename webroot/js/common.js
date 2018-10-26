@@ -58,6 +58,16 @@ $(document).ready(function ($) {
         return false;
     });
     $('.select2').select2();
+    
+    $('#permissionType').on('change', function(){
+        var type = $(this).val();
+        location.href = baseUrl + '/settings/permission/' + type;
+    });
+    
+    $(".checkAll").click(function () {
+        var id = $(this).attr('data-id');
+        $(".subCheckbox_" + id + " .check").prop('checked', $(this).prop('checked'));
+    });
 });
 
 /**

@@ -285,3 +285,9 @@ msgstr "Ngày tạo"
 
 msgid "LABEL_MONTHLYCARD_ID"
 msgstr "ID vé"
+
+msgid "LABEL_SYSTEM_SETTING"
+msgstr "Cấu hình hệ thống"
+
+msgid "LABEL_SETTING_PERMISSION"
+msgstr "Phân quyền truy cập"

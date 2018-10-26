@@ -104,3 +104,10 @@ img {
     width: 10%;
     text-align: center;
 }
+.subCheckbox {
+    margin-left: 20px;
+}
+.subCheckbox label {
+    display: block;
+    margin: 5px 0;
+}
