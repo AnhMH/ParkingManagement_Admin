@@ -18,7 +18,7 @@ class RevenueController extends AppController {
     /**
      * Revenue formula1
      */
-    public function priceformula1() {
+    public function priceformula1($vehicleId = '') {
         include ('Bus/Revenue/priceformula1.php');
     }
     

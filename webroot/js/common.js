@@ -59,9 +59,9 @@ $(document).ready(function ($) {
     });
     $('.select2').select2();
     
-    $('#permissionType').on('change', function(){
+    $('#permissionType, #vehicleType').on('change', function(){
         var type = $(this).val();
-        location.href = baseUrl + '/settings/permission/' + type;
+        location.href = baseUrl + '/' + controller + '/' + action + '/' + type;
     });
     
     $(".checkAll").click(function () {
