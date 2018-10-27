@@ -3,7 +3,7 @@ use App\Lib\Api;
 use Cake\Core\Configure;
 
 // Create breadcrumb
-$pageTitle = __('LABEL_PRICE_FORMULA_2');
+$pageTitle = __('LABEL_PRICE_FORMULA_3');
 $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'name' => $pageTitle,
