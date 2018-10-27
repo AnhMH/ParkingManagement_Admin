@@ -37,15 +37,15 @@
                         <div class="col-sm-6">
                             <div class="form-group form-inline">
                                 <label for="normal_price" class="width-100">Giá thường:</label>
-                                <input type="number" value="<?php echo !empty($detail['normal_price']) ? $detail['normal_price'] : '';?>" name="normal_price" class="form-control">
+                                <input type="number" step="1000" value="<?php echo !empty($detail['normal_price']) ? $detail['normal_price'] : '';?>" name="normal_price" class="form-control">
                             </div>
                             <div class="form-group form-inline">
                                 <label for="night_price" class="width-100">Giá đêm:</label>
-                                <input type="number" value="<?php echo !empty($detail['night_price']) ? $detail['night_price'] : '';?>" name="night_price" class="form-control">
+                                <input type="number" step="1000" value="<?php echo !empty($detail['night_price']) ? $detail['night_price'] : '';?>" name="night_price" class="form-control">
                             </div>
                             <div class="form-group form-inline">
                                 <label for="day_night_price" class="width-100">Ngày + đêm:</label>
-                                <input type="number" value="<?php echo !empty($detail['day_night_price']) ? $detail['day_night_price'] : '';?>" name="day_night_price" class="form-control">
+                                <input type="number" step="1000" value="<?php echo !empty($detail['day_night_price']) ? $detail['day_night_price'] : '';?>" name="day_night_price" class="form-control">
                             </div>
                         </div>
                         <div class="col-sm-8 col-sm-offset-4">
@@ -53,7 +53,7 @@
                                 <label for="over_minute">Bé hơn:</label>
                                 <input type="number" value="<?php echo !empty($detail['over_minute']) ? $detail['over_minute'] : '';?>" min="1" max="60" name="over_minute" class="form-control"> 
                                 <label for="over_minute_price" class="width-100">Phút</label>
-                                <input type="number" value="<?php echo !empty($detail['over_minute_price']) ? $detail['over_minute_price'] : '';?>" name="over_minute_price" class="form-control">
+                                <input type="number" step="1000" value="<?php echo !empty($detail['over_minute_price']) ? $detail['over_minute_price'] : '';?>" name="over_minute_price" class="form-control">
                             </div>
                         </div>
                         <label>Vé tháng giới hạn giờ</label>
@@ -61,7 +61,7 @@
                             <label for="monthly_card_time">Chu kỳ:</label>
                             <input type="number" value="<?php echo !empty($detail['monthly_card_time']) ? $detail['monthly_card_time'] : '';?>" min="0" max="23" name="monthly_card_time" class="form-control"> h
                             &nbsp;&nbsp;&nbsp;&nbsp;<label for="monthly_card_time_price">Giá</label>
-                            <input type="number" value="<?php echo !empty($detail['monthly_card_time_price']) ? $detail['monthly_card_time_price'] : '';?>" name="monthly_card_time_price" class="form-control">
+                            <input type="number" step="1000" value="<?php echo !empty($detail['monthly_card_time_price']) ? $detail['monthly_card_time_price'] : '';?>" name="monthly_card_time_price" class="form-control">
                         </div>
                         <div class="form-group button-group">
                             <div class="form-group">

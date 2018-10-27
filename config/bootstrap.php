@@ -272,6 +272,11 @@ Configure::write('Config.monthlyCardExpireType', array(
     '0' => 'Tính tiền như vãng lai',
     '1' => 'Chỉ cảnh báo hết hạn'
 ));
+Configure::write('Config.priceLevel3Type', array(
+    '0' => 'Không cộng',
+    '1' => 'Cộng 1 mốc',
+    '2' => 'Cộng 2 mốc'
+));
 
 if ($env == 'production') {
     define('VERSION_DATE', date('YmdHis'));

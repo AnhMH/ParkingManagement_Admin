@@ -25,14 +25,14 @@ class RevenueController extends AppController {
     /**
      * Revenue formula2
      */
-    public function priceformula2() {
+    public function priceformula2($vehicleId = '') {
         include ('Bus/Revenue/priceformula2.php');
     }
     
     /**
      * Revenue formula3
      */
-    public function priceformula3() {
+    public function priceformula3($vehicleId = '') {
         include ('Bus/Revenue/priceformula3.php');
     }
 }
