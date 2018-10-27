@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <?php foreach ($priceLevel3Type as $k => $v): ?>
                             <label class="radio-inline">
-                                <input type="radio" name="level_3_price_type" value="<?php echo $k;?>" <?php echo isset($detail['level_3_price_type']) && $detail['level_3_time'] == $k ? 'checked' : ''; ?>><?php echo $v;?> 
+                                <input type="radio" name="level_3_price_type" value="<?php echo $k;?>" <?php echo isset($detail['level_3_price_type']) && $detail['level_3_price_type'] == $k ? 'checked' : ''; ?>><?php echo $v;?> 
                             </label>
                             <?php endforeach; ?>
                         </div>
