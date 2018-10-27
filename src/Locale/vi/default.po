@@ -291,3 +291,27 @@ msgstr "Cấu hình hệ thống"
 
 msgid "LABEL_SETTING_PERMISSION"
 msgstr "Phân quyền truy cập"
+
+msgid "LABEL_DISPLAY_SETTING"
+msgstr "Cấu hình hiển thị"
+
+msgid "LABEL_PARKING_TYPE"
+msgstr "Loại hình giữ xe"
+
+msgid "LABEL_CARD_LOST_FEE"
+msgstr "Tiền phạt khi mất thẻ"
+
+msgid "LABEL_TOTAL_CARD"
+msgstr "Tổng sức chứa"
+
+msgid "LABEL_TOTAL_MONTHLY_CARD"
+msgstr "Sức chứa vé tháng"
+
+msgid "LABEL_MONTHLY_CARD_LIMIT"
+msgstr "Hạn mức thẻ tháng"
+
+msgid "LABEL_OVERNIGHT_LIMIT"
+msgstr "Hạn mức qua đêm"
+
+msgid "LABEL_MONTHLY_CARD_EXPIRE_TYPE"
+msgstr "Khi vé tháng hết hạn"

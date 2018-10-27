@@ -48,3 +48,6 @@ Configure::write('API.url_systemlogs_list', 'systemlogs/list');
 
 Configure::write('API.url_permissions_addupdate', 'permissions/addupdate');
 Configure::write('API.url_permissions_detail', 'permissions/detail');
+
+Configure::write('API.url_settings_addupdate', 'settings/addupdate');
+Configure::write('API.url_settings_detail', 'settings/detail');

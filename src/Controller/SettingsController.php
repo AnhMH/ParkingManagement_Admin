@@ -14,4 +14,11 @@ class SettingsController extends AppController {
     public function permission($type = '') {
         include ('Bus/Settings/permission.php');
     }
+    
+    /**
+     * Display setting
+     */
+    public function display() {
+        include ('Bus/Settings/display.php');
+    }
 }

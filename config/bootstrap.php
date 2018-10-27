@@ -255,6 +255,23 @@ Configure::write('Config.gender', array(
     1 => 'Nam',
     2 => 'Nữ',
 ));
+Configure::write('Config.settingType', array(
+    'permission' => 1,
+    'display' => 2,
+    'price_formula1' => 3,
+    'price_formula2' => 4,
+    'price_formula3' => 5,
+));
+Configure::write('Config.parkingType', array(
+    '0' => 'Giữ xe miễn phí',
+    '1' => 'Giữ xe theo công văn',
+    '2' => 'Giữ xe tăng lũy tiến',
+    '3' => 'Giữ xe tổng hợp',
+));
+Configure::write('Config.monthlyCardExpireType', array(
+    '0' => 'Tính tiền như vãng lai',
+    '1' => 'Chỉ cảnh báo hết hạn'
+));
 
 if ($env == 'production') {
     define('VERSION_DATE', date('YmdHis'));

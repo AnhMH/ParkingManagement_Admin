@@ -151,6 +151,11 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('display'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/settings/display">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_DISPLAY_SETTING');?>
+                        </a>
+                    </li>
                     <li class="<?php if (in_array($action, array('permission'))) echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/settings/permission">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_SETTING_PERMISSION');?>
