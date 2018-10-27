@@ -68,6 +68,16 @@ $(document).ready(function ($) {
         var id = $(this).attr('data-id');
         $(".subCheckbox_" + id + " .check").prop('checked', $(this).prop('checked'));
     });
+    $(".check").click(function(){
+        var pId = $(this).attr('data-parent-id');
+        var check = false;
+        $(".subCheckbox_" + pId + " .check").each(function(){
+            if ($(this).prop('checked')) {
+                check = true;
+            }
+        });
+        $('.checkAll_' + pId).prop('checked', check);
+    });
 });
 
 /**
