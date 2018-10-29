@@ -315,3 +315,18 @@ msgstr "Hạn mức qua đêm"
 
 msgid "LABEL_MONTHLY_CARD_EXPIRE_TYPE"
 msgstr "Khi vé tháng hết hạn"
+
+msgid "LABEL_IS_CARD_LOST"
+msgstr "Mất thẻ"
+
+msgid "LABEL_NOTES"
+msgstr "Ghi chú"
+
+msgid "LABEL_ORDER_CHECKIN_TIME"
+msgstr "Thời gian vào"
+
+msgid "LABEL_ORDER_TOTAL_PRICE"
+msgstr "Giá tiền"
+
+msgid "LABEL_ORDER_CHECKOUT_TIME"
+msgstr "Thời gian ra"

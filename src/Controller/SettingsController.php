@@ -21,4 +21,11 @@ class SettingsController extends AppController {
     public function display() {
         include ('Bus/Settings/display.php');
     }
+    
+    /**
+     * Order list
+     */
+    public function order() {
+        include ('Bus/Settings/order.php');
+    }
 }

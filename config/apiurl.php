@@ -46,6 +46,8 @@ Configure::write('API.url_admintypes_disable', 'admintypes/disable');
 
 Configure::write('API.url_systemlogs_list', 'systemlogs/list');
 
+Configure::write('API.url_orders_list', 'orders/list');
+
 Configure::write('API.url_permissions_addupdate', 'permissions/addupdate');
 Configure::write('API.url_permissions_detail', 'permissions/detail');
 
