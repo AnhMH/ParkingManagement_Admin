@@ -21,12 +21,12 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
-            'id' => 'card_code',
-            'label' => __('LABEL_CARD_CODE')
+            'id' => 'customer_name',
+            'label' => __('LABEL_CUSTOMER_NAME')
         ))
         ->addElement(array(
-            'id' => 'car_number',
-            'label' => __('LABEL_CAR_NUMBER')
+            'id' => 'company',
+            'label' => __('LABEL_COMPANY')
         ))
         ->addElement(array(
             'id' => 'created',
@@ -46,7 +46,8 @@ $this->SearchForm
 
 $param = $this->getParams(array(
     'limit' => $pageSize,
-    'disable' => 0
+    'disable' => 0,
+    'card_type' => 'monthly'
 ));
 
 $result = Api::call(Configure::read('API.url_orders_list'), $param);
@@ -57,18 +58,28 @@ $data = !empty($result['data']) ? $result['data'] : array();
 $this->SimpleTable
         ->setDataset($data)
         ->addColumn(array(
+            'id' => 'id',
+            'title' => __('ID'),
+            'empty' => '',
+        ))
+        ->addColumn(array(
             'id' => 'card_code',
             'title' => __('LABEL_CARD_CODE'),
-            'empty' => '',
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'company',
+            'title' => __('LABEL_COMPANY'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'customer_name',
+            'title' => __('LABEL_CUSTOMER_NAME'),
+            'empty' => ''
         ))
         ->addColumn(array(
             'id' => 'car_number',
             'title' => __('LABEL_CAR_NUMBER'),
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'notes',
-            'title' => __('LABEL_NOTES'),
             'empty' => ''
         ))
         ->addColumn(array(
@@ -77,29 +88,20 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'total_price',
-            'title' => __('LABEL_ORDER_TOTAL_PRICE'),
-            'empty' => '0'
-        ))
-        ->addColumn(array(
             'id' => 'checkouttime',
             'title' => __('LABEL_ORDER_CHECKOUT_TIME'),
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'account',
-            'title' => __('LABEL_ACCOUNT'),
+            'id' => 'vehicle_name',
+            'title' => __('LABEL_VEHICLE_NAME'),
             'empty' => ''
         ))
-        ->addColumn(array(
-            'id' => 'is_card_lost',
-            'title' => __('LABEL_IS_CARD_LOST'),
-            'empty' => '0'
-        ))
-        ->addColumn(array(
-            'id' => 'pc_name',
-            'title' => __('LABEL_PC_NAME'),
-            'empty' => ''
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_EXPORT_EXCEL'),
+            'class' => 'btn btn-primary btn-export-excel',
+            'data-param' => http_build_query($param)
         ));
 
 $this->set('pageTitle', $pageTitle);
