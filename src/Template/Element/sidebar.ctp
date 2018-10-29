@@ -156,9 +156,36 @@
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_DISPLAY_SETTING');?>
                         </a>
                     </li>
+                    <li class="<?php if (in_array($action, array('order'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/settings/order">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_ORDER_LIST');?>
+                        </a>
+                    </li>
                     <li class="<?php if (in_array($action, array('permission'))) echo ' active ' ?>">
                         <a href="<?php echo $BASE_URL; ?>/settings/permission">
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_SETTING_PERMISSION');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="treeview <?php if (in_array($controller, array('checkinoutlogs'))) echo ' active ' ?>">
+                <a href="#">
+                    <i class="fa fa-exchange"></i>
+                    <span><?php echo __('LABEL_CHECKINOUT_LOG'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if (in_array($action, array('card'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/checkinoutlogs/card">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_CARD_LOG');?>
+                        </a>
+                    </li>
+                    <li class="<?php if (in_array($action, array('monthlycard'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/checkinoutlogs/monthlycard">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_MONTHLY_CARD_LOG');?>
                         </a>
                     </li>
                 </ul>

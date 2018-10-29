@@ -19,7 +19,8 @@ $(document).ready(function ($) {
 
     // Buttons action
     $(".btn-disable").click(function () {
-        return disableEnableMulti('disable', true);
+        var msgConfirm = $(this).attr('data-confirm');
+        return disableEnableMulti('disable', true, msgConfirm);
     });
     $(".btn-enable").click(function () {
         return disableEnableMulti('enable');
@@ -85,16 +86,19 @@ $(document).ready(function ($) {
  * @param {string} type
  * @returns {Boolean}
  */
-function disableEnableMulti(type, mess) {
+function disableEnableMulti(type, mess, messConfirm) {
     if (typeof mess == 'undefined') {
         mess = false;
+    }
+    if (typeof messConfirm == 'undefined') {
+        messConfirm = 'Bạn có chắc chắn muốn xóa dữ liệu này?';
     }
     var items = getItemsChecked('items[]', ',');
     if (items == '') {
         showAlertModal('Vui lòng chọn dữ liệu');
         return false;
     }
-    if (mess && !confirm('Bạn có chắc chắn muốn xóa dữ liệu này?')) {
+    if (mess && !confirm(messConfirm)) {
         return false;
     }
     

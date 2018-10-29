@@ -6,7 +6,7 @@ $this->doGeneralAction();
 $pageSize = Configure::read('Config.PageSize');
 
 // Create breadcrumb
-$pageTitle = __('LABEL_ORDER_LIST');
+$pageTitle = __('LABEL_MONTHLY_CARD_LOG');
 $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'name' => $pageTitle,

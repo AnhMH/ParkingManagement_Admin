@@ -287,7 +287,7 @@ msgid "LABEL_MONTHLYCARD_ID"
 msgstr "ID vé"
 
 msgid "LABEL_SYSTEM_SETTING"
-msgstr "Cấu hình hệ thống"
+msgstr "Quản lý hệ thống"
 
 msgid "LABEL_SETTING_PERMISSION"
 msgstr "Phân quyền truy cập"
@@ -330,3 +330,27 @@ msgstr "Giá tiền"
 
 msgid "LABEL_ORDER_CHECKOUT_TIME"
 msgstr "Thời gian ra"
+
+msgid "LABEL_ORDER_LIST"
+msgstr "Quản lý thu tiền xe"
+
+msgid "LABEL_CHECKINOUT_LOG"
+msgstr "Quản lý xe ra vào"
+
+msgid "LABEL_CARD_LOG"
+msgstr "Tra cứu vào ra"
+
+msgid "LABEL_MONTHLY_CARD_LOG"
+msgstr "Tra cứu vé tháng"
+
+msgid "LABEL_ADMIN_CHECKIN_NAME"
+msgstr "Người vào"
+
+msgid "LABEL_ADMIN_CHECKOUT_NAME"
+msgstr "Người ra"
+
+msgid "LABEL_MONTHLY_CARD"
+msgstr "Thẻ tháng"
+
+msgid "LABEL_SAVE_CARD_LOST"
+msgstr "Lưu mất thẻ"

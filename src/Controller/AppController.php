@@ -248,11 +248,16 @@ class AppController extends Controller {
                     case 'enable':
                     case 'disable':
                         $param['disable'] = ($data['action'] == 'disable' ? 1 : 0);
-                        Api::call("{$this->request->params['controller']}/disable", $param);
+                        $controller = $this->request->params['controller'];
+                        $apiUrl = "{$controller}/disable";
+                        if ($controller == 'Checkinoutlogs') {
+                            $apiUrl = "orders/carddisable";
+                        }
+                        Api::call($apiUrl, $param);
                         $error = Api::getError();
                         if ($error) {
                             AppLog::warning("Can not update", __METHOD__, $data);
-                            $this->Flash->error(__('MESSAGE_CANNOT_UPDATE'));
+                            $this->Flash->error(html_entity_decode(Api::parseErrorMess($error)));
                         } else {
                             $this->Flash->success(__('MESSAGE_UPDATE_SUCCESSFULLY'));
                         }

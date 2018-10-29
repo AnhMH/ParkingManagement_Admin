@@ -6,7 +6,7 @@ $this->doGeneralAction();
 $pageSize = Configure::read('Config.PageSize');
 
 // Create breadcrumb
-$pageTitle = __('LABEL_ORDER_LIST');
+$pageTitle = __('LABEL_CARD_LOG');
 $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'name' => $pageTitle,
@@ -29,6 +29,10 @@ $this->SearchForm
             'label' => __('LABEL_CAR_NUMBER')
         ))
         ->addElement(array(
+            'id' => 'car_stt',
+            'label' => __('STT')
+        ))
+        ->addElement(array(
             'id' => 'created',
             'label' => __('LABEL_MANY_DATE'),
             'type' => 'calendar_from_to'
@@ -46,7 +50,7 @@ $this->SearchForm
 
 $param = $this->getParams(array(
     'limit' => $pageSize,
-    'disable' => 0
+    'disable' => 0,
 ));
 
 $result = Api::call(Configure::read('API.url_orders_list'), $param);
@@ -56,20 +60,27 @@ $data = !empty($result['data']) ? $result['data'] : array();
 // Show data
 $this->SimpleTable
         ->setDataset($data)
+         ->addColumn(array(
+            'id' => 'item',
+            'name' => 'items[]',
+            'type' => 'checkbox',
+            'value' => '{id}',
+            'width' => 20,
+        ))
+        ->addColumn(array(
+            'id' => 'id',
+            'title' => __('ID'),
+            'empty' => '',
+        ))
+        ->addColumn(array(
+            'id' => 'card_stt',
+            'title' => __('STT'),
+            'empty' => '',
+        ))
         ->addColumn(array(
             'id' => 'card_code',
             'title' => __('LABEL_CARD_CODE'),
             'empty' => '',
-        ))
-        ->addColumn(array(
-            'id' => 'car_number',
-            'title' => __('LABEL_CAR_NUMBER'),
-            'empty' => ''
-        ))
-        ->addColumn(array(
-            'id' => 'notes',
-            'title' => __('LABEL_NOTES'),
-            'empty' => ''
         ))
         ->addColumn(array(
             'id' => 'checkintime',
@@ -77,18 +88,33 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'total_price',
-            'title' => __('LABEL_ORDER_TOTAL_PRICE'),
-            'empty' => '0'
-        ))
-        ->addColumn(array(
             'id' => 'checkouttime',
             'title' => __('LABEL_ORDER_CHECKOUT_TIME'),
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'account',
-            'title' => __('LABEL_ACCOUNT'),
+            'id' => 'car_number',
+            'title' => __('LABEL_CAR_NUMBER'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'admin_checkin_name',
+            'title' => __('LABEL_ADMIN_CHECKIN_NAME'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'vehicle_code',
+            'title' => __('LABEL_VEHICLE_CODE'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'admin_checkout_name',
+            'title' => __('LABEL_ADMIN_CHECKOUT_NAME'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'vehicle_name',
+            'title' => __('LABEL_VEHICLE_NAME'),
             'empty' => ''
         ))
         ->addColumn(array(
@@ -97,9 +123,36 @@ $this->SimpleTable
             'empty' => '0'
         ))
         ->addColumn(array(
+            'id' => 'total_price',
+            'title' => __('LABEL_ORDER_TOTAL_PRICE'),
+            'empty' => '0'
+        ))
+        ->addColumn(array(
             'id' => 'pc_name',
             'title' => __('LABEL_PC_NAME'),
             'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'account',
+            'title' => __('LABEL_ACCOUNT'),
+            'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'monthly_card_code',
+            'title' => __('LABEL_MONTHLY_CARD'),
+            'empty' => ''
+        ))
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_SAVE_CARD_LOST'),
+            'class' => 'btn btn-danger btn-disable',
+            'data-confirm' => 'Bạn có muốn lưu mất các thẻ được chọn?'
+        ))
+        ->addButton(array(
+            'type' => 'submit',
+            'value' => __('LABEL_EXPORT_EXCEL'),
+            'class' => 'btn btn-primary btn-export-excel',
+            'data-param' => http_build_query($param)
         ));
 
 $this->set('pageTitle', $pageTitle);
