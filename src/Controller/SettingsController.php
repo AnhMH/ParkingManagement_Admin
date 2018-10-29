@@ -28,4 +28,11 @@ class SettingsController extends AppController {
     public function order() {
         include ('Bus/Settings/order.php');
     }
+    
+    /**
+     * System log
+     */
+    public function systemlog() {
+        include ('Bus/Settings/systemlog.php');
+    }
 }

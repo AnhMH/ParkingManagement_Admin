@@ -354,3 +354,57 @@ msgstr "Thẻ tháng"
 
 msgid "LABEL_SAVE_CARD_LOST"
 msgstr "Lưu mất thẻ"
+
+msgid "LABEL_DETAIL"
+msgstr "Nội dung"
+
+msgid "LABEL_SYSTEM_LOG"
+msgstr "Nhật ký hệ thống"
+
+msgid "LABEL_LOG_TYPE_ADMIN_LOGIN"
+msgstr "Đăng nhập"
+
+msgid "LABEL_LOG_TYPE_ADMIN_LOGOUT"
+msgstr "Đăng xuất"
+
+msgid "LABEL_LOG_TYPE_ADMIN_UPDATE"
+msgstr "Cập nhật nhân viên"
+
+msgid "LABEL_LOG_TYPE_ADMIN_CREATE"
+msgstr "Tạo mới nhân viên"
+
+msgid "LABEL_LOG_TYPE_ADMIN_DELETE"
+msgstr "Xóa nhân viên"
+
+msgid "LABEL_LOG_TYPE_ADMIN_TYPE_UPDATE"
+msgstr "Cập nhật chức vụ"
+
+msgid "LABEL_LOG_TYPE_ADMIN_TYPE_CREATE"
+msgstr "Tạo mới chức vụ"
+
+msgid "LABEL_LOG_TYPE_ADMIN_TYPE_DELETE"
+msgstr "Xóa chức vụ"
+
+msgid "LABEL_LOG_TYPE_CARD_CREATE"
+msgstr "Tạo mới thẻ chip"
+
+msgid "LABEL_LOG_TYPE_CARD_UPDATE"
+msgstr "Cập nhật thẻ chip"
+
+msgid "LABEL_LOG_TYPE_CARD_DELETE"
+msgstr "Xóa thẻ chip"
+
+msgid "LABEL_LOG_TYPE_CARD_IMPORT"
+msgstr "Import thẻ chip"
+
+msgid "LABEL_LOG_TYPE_CARD_EXPORT"
+msgstr "Export thẻ chip"
+
+msgid "LABEL_LOG_TYPE_UPDATE_PRICE_FORMULA1"
+msgstr "Cập nhật CT TT theo công văn"
+
+msgid "LABEL_LOG_TYPE_UPDATE_PRICE_FORMULA2"
+msgstr "Cập nhật CT TT lũy tiến"
+
+msgid "LABEL_LOG_TYPE_UPDATE_PRICE_FORMULA3"
+msgstr "Cập nhật CT tổng hợp"

@@ -242,6 +242,16 @@ Configure::write('Config.systemLogType', array(
     'MONTHLYCARD_DELETE' => 11,
     'MONTHLYCARD_IMPORT' => 12,
     'MONTHLYCARD_EXPORT' => 13,
+    
+    'CARD_CREATE' => 14,
+    'CARD_UPDATE' => 15,
+    'CARD_DELETE' => 16,
+    'CARD_IMPORT' => 17,
+    'CARD_EXPORT' => 18,
+    
+    'UPDATE_PRICE_FORMULA1' => 19,
+    'UPDATE_PRICE_FORMULA2' => 20,
+    'UPDATE_PRICE_FORMULA3' => 21,
 ));
 Configure::write('Config.searchStatus', array(
     0 => __('LABEL_ACTIVE'),

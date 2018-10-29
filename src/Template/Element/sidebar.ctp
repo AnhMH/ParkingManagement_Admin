@@ -166,6 +166,11 @@
                             <i class="fa fa-circle-o"></i> <?php echo __('LABEL_SETTING_PERMISSION');?>
                         </a>
                     </li>
+                    <li class="<?php if (in_array($action, array('systemlog'))) echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/settings/systemlog">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_SYSTEM_LOG');?>
+                        </a>
+                    </li>
                 </ul>
             </li>
             

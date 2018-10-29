@@ -78,7 +78,7 @@ if (!empty($data)) {
         $tmp = array(
             'id' => $v['id'],
             'type' => !empty($logType[$v['type']]) ? $logType[$v['type']] : '',
-            'created' => !empty($v['created']) ? date('Y-m-d H:i', $v['created']) : '-',
+            'created' => !empty($v['created']) ? $v['created'] : '-',
             'admin_name' => $v['admin_name'],
             'monthlycard_id' => !empty($detail['id']) ? $detail['id'] : '',
             'card_code' => !empty($detail['card_code']) ? $detail['card_code'] : '',
