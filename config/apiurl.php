@@ -13,6 +13,7 @@ Configure::write('API.url_admins_logout', 'admins/logout');
 Configure::write('API.url_admins_register', 'admins/register');
 Configure::write('API.url_admins_updateprofile', 'admins/updateprofile');
 Configure::write('API.url_admins_list', 'admins/list');
+Configure::write('API.url_admins_all', 'admins/all');
 Configure::write('API.url_admins_addupdate', 'admins/addupdate');
 Configure::write('API.url_admins_detail', 'admins/detail');
 Configure::write('API.url_admins_disable', 'admins/disable');
@@ -47,6 +48,7 @@ Configure::write('API.url_admintypes_disable', 'admintypes/disable');
 Configure::write('API.url_systemlogs_list', 'systemlogs/list');
 
 Configure::write('API.url_orders_list', 'orders/list');
+Configure::write('API.url_orders_revenue', 'orders/revenue');
 
 Configure::write('API.url_permissions_addupdate', 'permissions/addupdate');
 Configure::write('API.url_permissions_detail', 'permissions/detail');
