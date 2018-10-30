@@ -287,6 +287,143 @@ Configure::write('Config.priceLevel3Type', array(
     '1' => 'Cộng 1 mốc',
     '2' => 'Cộng 2 mốc'
 ));
+Configure::write('Config.settingPermission', array(
+    '1' => array(
+        'title' => __('LABEL_ADMIN_MANAGEMENT'),
+        'detail' => array(
+            'admin_list' => array(
+                'title' => __('LABEL_ADMIN_LIST'),
+                'controller' => 'Admins',
+                'action' => 'index,update'
+            ),
+            'admin_log' => array(
+                'title' => __('LABEL_ADMIN_LOG'),
+                'controller' => 'Admins',
+                'action' => 'viewlog'
+            ),
+            'admin_type' => array(
+                'title' => __('LABEL_ADMIN_TYPE_LIST'),
+                'controller' => 'Admins',
+                'action' => 'index,update'
+            )
+        )
+    ),
+    '2' => array(
+        'title' => __('LABEL_REVENUE_MANAGEMENT'),
+        'detail' => array(
+            'revenue_list' => array(
+                'title' => __('LABEL_REVENUE_LIST'),
+                'controller' => 'Revenue',
+                'action' => 'index'
+            ),
+            'price_formula_1' => array(
+                'title' => __('LABEL_PRICE_FORMULA_1'),
+                'controller' => 'Revenue',
+                'action' => 'priceformula1'
+            ),
+            'price_formula_2' => array(
+                'title' => __('LABEL_PRICE_FORMULA_2'),
+                'controller' => 'Revenue',
+                'action' => 'priceformula2'
+            ),
+            'price_formula_3' => array(
+                'title' => __('LABEL_PRICE_FORMULA_3'),
+                'controller' => 'Revenue',
+                'action' => 'priceformula3'
+            ),
+        )
+    ),
+    '3' => array(
+        'title' => __('LABEL_CARD_VEHICLE_MANAGEMENT'),
+        'detail' => array(
+            'card_list' => array(
+                'title' => __('LABEL_CARD_LIST'),
+                'controller' => 'Cards',
+                'action' => 'index,update'
+            ),
+            'vehicle_list' => array(
+                'title' => __('LABEL_VEHICLE_LIST'),
+                'controller' => 'Vehicles',
+                'action' => 'index,update'
+            ),
+            'card_active' => array(
+                'title' => __('LABEL_CARD_ACTIVE'),
+                'controller' => 'Cards',
+                'action' => 'active'
+            ),
+        )
+    ),
+    '4' => array(
+        'title' => __('LABEL_MONTHLYCARD_MANAGEMENT'),
+        'detail' => array(
+            'monthly_card_log' => array(
+                'title' => __('LABEL_MONTHLYCARD_VIEWLOG'),
+                'controller' => 'Monthlycards',
+                'action' => 'viewlog'
+            ),
+            'monthly_card_list' =>array(
+                'title' => __('LABEL_MONTHLYCARD_LIST'),
+                'controller' => 'Monthlycards',
+                'action' => 'index,update'
+            ),
+            'monthly_card_renewal' => array(
+                'title' => __('LABEL_MONTHLYCARD_RENEWAL'),
+                'controller' => 'Monthlycards',
+                'action' => 'renewal'
+            ),
+            'monthly_card_change' => array(
+                'title' => __('LABEL_MONTHLYCARD_CHANGE'),
+                'controller' => 'Monthlycards',
+                'action' => 'disablelist'
+            ),
+            'monthly_card_active' => array(
+                'title' => __('LABEL_MONTHLYCARD_ACTIVE'),
+                'controller' => 'Monthlycards',
+                'action' => 'active'
+            ),
+        )
+    ),
+    '5' => array(
+        'title' => __('LABEL_SYSTEM_SETTING'),
+        'detail' => array(
+            'system_display_setting' => array(
+                'title' => __('LABEL_DISPLAY_SETTING'),
+                'controller' => 'Settings',
+                'action' => 'display'
+            ),
+            'system_order_list' => array(
+                'title' => __('LABEL_ORDER_LIST'),
+                'controller' => 'Settings',
+                'action' => 'order'
+            ),
+            'system_permission' => array(
+                'title' => __('LABEL_SETTING_PERMISSION'),
+                'controller' => 'Settings',
+                'action' => 'permission'
+            ),
+            'system_log' => array(
+                'title' => __('LABEL_SYSTEM_LOG'),
+                'controller' => 'Settings',
+                'action' => 'systemlog'
+            ),
+        )
+    ),
+    '6' => array(
+        'title' => __('LABEL_CHECKINOUT_LOG'),
+        'detail' => array(
+            'checkinout_card_log' => array(
+                'title' => __('LABEL_CARD_LOG'),
+                'controller' => 'checkinoutlogs',
+                'action' => 'card'
+            ),
+            'checkinout_monthly_card_log' => array(
+                'title' => __('LABEL_MONTHLY_CARD_LOG'),
+                'controller' => 'checkinoutlogs',
+                'action' => 'monthlycard'
+            ),
+        )
+    )
+));
 
 if ($env == 'production') {
     define('VERSION_DATE', date('YmdHis'));

@@ -40,7 +40,7 @@
                                     <div class="subCheckbox subCheckbox_<?php echo $k; ?>">
                                         <?php foreach ($v['detail'] as $dk => $dv): ?>
                                             <label>
-                                                <input type="checkbox" data-parent-id="<?php echo $k; ?>" name="<?php echo $dk; ?>" value="1" class="check" <?php echo!empty($detail[$dk]) ? "checked='checked'" : ''; ?>> <?php echo $dv; ?>
+                                                <input type="checkbox" data-parent-id="<?php echo $k; ?>" name="<?php echo $dk; ?>" value="1" class="check" <?php echo!empty($detail[$dk]) ? "checked='checked'" : ''; ?>> <?php echo $dv['title']; ?>
                                             </label>
                                         <?php endforeach; ?>
                                     </div>

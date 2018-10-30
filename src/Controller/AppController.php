@@ -121,6 +121,11 @@ class AppController extends Controller {
                 return $this->redirect('/');
             }
         }
+        
+        // Check permission
+        if (!$this->checkPermission()) {
+            return $this->redirect('/');
+        }
     }
 
     /**
@@ -425,6 +430,30 @@ class AppController extends Controller {
             }
         }
         return $excelData;
+    }
+    
+    /**
+     * Check permission
+     * 
+     * @param string $url
+     * @return string | boolean
+     */
+    public function checkPermission() {
+        $check = true;
+        $permission = Configure::read('Config.settingPermission');
+        $data = $this->AppUI['permission'];
+        foreach ($permission as $val) {
+            if (!$check) {
+                break;
+            }
+            foreach ($val['detail'] as $dk => $dv) {
+                if (strtolower($dv['controller']) == strtolower($this->controller) && in_array($this->action, explode(',', $dv['action'])) && empty($data[$dk])) {
+                    $check = false;
+                    break;
+                }
+            }
+        }
+        return $check;
     }
 
 }

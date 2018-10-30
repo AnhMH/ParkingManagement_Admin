@@ -23,43 +23,7 @@ $detail = $this->Common->arrayKeyValue(Api::call(Configure::read('API.url_permis
     'admin_type' => $type
 )), 'name', 'value');
 
-$permission = array(
-    '1' => array(
-        'title' => __('LABEL_ADMIN_MANAGEMENT'),
-        'detail' => array(
-            'admin_list' => __('LABEL_ADMIN_LIST'),
-            'admin_log' => __('LABEL_ADMIN_LOG'),
-            'admin_type' => __('LABEL_ADMIN_TYPE_LIST')
-        )
-    ),
-    '2' => array(
-        'title' => __('LABEL_REVENUE_MANAGEMENT'),
-        'detail' => array(
-            'revenue_list' => __('LABEL_REVENUE_LIST'),
-            'price_formula_1' => __('LABEL_PRICE_FORMULA_1'),
-            'price_formula_2' => __('LABEL_PRICE_FORMULA_2'),
-            'price_formula_3' => __('LABEL_PRICE_FORMULA_3'),
-        )
-    ),
-    '3' => array(
-        'title' => __('LABEL_CARD_VEHICLE_MANAGEMENT'),
-        'detail' => array(
-            'card_list' => __('LABEL_CARD_LIST'),
-            'vehicle_list' => __('LABEL_VEHICLE_LIST'),
-            'card_active' => __('LABEL_CARD_ACTIVE')
-        )
-    ),
-    '4' => array(
-        'title' => __('LABEL_MONTHLYCARD_MANAGEMENT'),
-        'detail' => array(
-            'monthly_card_log' => __('LABEL_MONTHLYCARD_VIEWLOG'),
-            'monthly_card_list' => __('LABEL_MONTHLYCARD_LIST'),
-            'monthly_card_renewal' => __('LABEL_MONTHLYCARD_RENEWAL'),
-            'monthly_card_change' => __('LABEL_MONTHLYCARD_CHANGE'),
-            'monthly_card_active' => __('LABEL_MONTHLYCARD_ACTIVE')
-        )
-    )
-);
+$permission = Configure::read('Config.settingPermission');
 
 $this->set('adminType', $adminType);
 $this->set('type', $type);
