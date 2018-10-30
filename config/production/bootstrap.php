@@ -7,7 +7,7 @@ use Cake\Core\Configure;
 
 define('USE_SUB_DIRECTORY', '');
 
-Configure::write('API.Host', 'http://api.chotreo.com/public/');
+Configure::write('API.Host', 'http://apipm.hoanganhonline.com/public/');
 Configure::write('Config.HTTPS', true);
 
 Configure::write('Config.CKeditor', array(
