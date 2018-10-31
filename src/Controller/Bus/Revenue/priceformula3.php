@@ -39,6 +39,13 @@ $settingKeys = array(
     'monthly_card_time',
     'monthly_card_time_price'
 );
+$numberKey = array(
+    'level_1_price',
+    'level_2_price',
+    'level_3_price',
+    'night_price',
+    'monthly_card_time_price'
+);
 
 $this->set('settingKeys', $settingKeys);
 $this->set('detail', $detail);
@@ -54,6 +61,9 @@ if ($this->request->is('post')) {
         'vehicle_id' => $vehicleId
     );
     foreach ($settingKeys as $p) {
+        if (in_array($p, $numberKey) && !empty($data[$p])) {
+            $data[$p] = preg_replace('[,]', '', $data[$p]);
+        }
         $param['data'][$p] = !empty($data[$p]) ? $data[$p] : '';
     }
     $param['data'] = json_encode($param['data']);

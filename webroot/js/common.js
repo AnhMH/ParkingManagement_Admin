@@ -79,6 +79,30 @@ $(document).ready(function ($) {
         });
         $('.checkAll_' + pId).prop('checked', check);
     });
+    
+    $(".txtMoney, #parking_fee, #card_lost_fee, #total_card, #total_monthly_card, #monthly_card_limit, #overnight_limit").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+            (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
+                // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+    $(".txtMoney, #parking_fee, #card_lost_fee, #total_card, #total_monthly_card, #monthly_card_limit, #overnight_limit").keyup(function () {
+        if ($(this).val() == '')
+            $(this).val(0);
+        else {
+            var value = cms_decode_currency_format($(this).val());
+            $(this).val(cms_encode_currency_format(value));
+        }
+    });
 });
 
 /**

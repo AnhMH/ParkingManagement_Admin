@@ -90,3 +90,10 @@ function is_empty(str) {
     }
     return false;
 }
+
+function cms_encode_currency_format(obs) {
+    return obs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function cms_decode_currency_format(obs) {
+    return parseInt(obs.replace(/,/g, ''));
+}

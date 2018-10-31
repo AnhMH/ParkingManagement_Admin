@@ -47,6 +47,14 @@ if (empty($data['start_date'])) {
 if (empty($data['end_date'])) {
     $data['end_date'] = date('Y-m-d', strtotime("+1 months"));
 }
+$numberKey = array(
+        'parking_fee',
+    );
+foreach ($numberKey as $nk) {
+    if (!empty($data[$nk])) {
+        $data[$nk] = number_format($data[$nk]);
+    }
+}
 $this->UpdateForm->reset()
     ->setModel($form)
     ->setData($data)
@@ -91,7 +99,7 @@ $this->UpdateForm->reset()
     ))
     ->addElement(array(
         'id' => 'parking_fee',
-        'label' => __('LABEL_PARKING_FEE'),
+        'label' => __('LABEL_PARKING_FEE')
     ))
     ->addElement(array(
         'id' => 'vehicle_id',
@@ -127,6 +135,9 @@ if ($this->request->is('post')) {
     foreach ($data as $key => $value) {
         if (is_scalar($value)) {
             $data[$key] = trim($value);
+        }
+        if (in_array($key, $numberKey)) {
+            $data[$key] = preg_replace('[,]', '', $value);
         }
     }
     // Validation

@@ -26,17 +26,17 @@
                             <label for="level_1_time">Mốc 1:</label>
                             <input type="number" value="<?php echo !empty($detail['level_1_time']) ? $detail['level_1_time'] : ''; ?>" min="0" max="23" name="level_1_time" class="form-control"> h
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="number" value="<?php echo !empty($detail['level_1_price']) ? $detail['level_1_price'] : ''; ?>" name="level_1_price" class="form-control" step="1000">
+                            <input type="text" value="<?php echo !empty($detail['level_1_price']) ? number_format($detail['level_1_price']) : ''; ?>" name="level_1_price" class="form-control txtMoney">
                         </div>
                         <div class="form-group form-inline">
                             <label for="monthly_card_time">Mốc 2:</label>
                             <input type="number" value="<?php echo !empty($detail['level_2_time']) ? $detail['level_2_time'] : ''; ?>" min="0" max="23" name="level_2_time" class="form-control"> h
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="number" value="<?php echo !empty($detail['level_2_price']) ? $detail['level_2_price'] : ''; ?>" name="level_2_price" class="form-control" step="1000">
+                            <input type="text" value="<?php echo !empty($detail['level_2_price']) ? number_format($detail['level_2_price']) : ''; ?>" name="level_2_price" class="form-control txtMoney">
                         </div>
                         <div class="form-group form-inline">
                             <label for="normal_price">Lớn hơn mốc 2:</label>
-                            <input type="number" value="<?php echo !empty($detail['level_3_price']) ? $detail['level_3_price'] : ''; ?>" name="level_3_price" class="form-control" step="1000">
+                            <input type="text" value="<?php echo !empty($detail['level_3_price']) ? number_format($detail['level_3_price']) : ''; ?>" name="level_3_price" class="form-control txtMoney">
                         </div>
                         <div class="form-group form-inline">
                             <label for="monthly_card_time">Chu kỳ:</label>
@@ -54,7 +54,7 @@
                             <label for="monthly_card_time">Chu kỳ:</label>
                             <input type="number" value="<?php echo!empty($detail['monthly_card_time']) ? $detail['monthly_card_time'] : ''; ?>" min="0" max="23" name="monthly_card_time" class="form-control"> h
                             &nbsp;&nbsp;&nbsp;&nbsp;<label for="monthly_card_time_price">Giá</label>
-                            <input type="number" value="<?php echo!empty($detail['monthly_card_time_price']) ? $detail['monthly_card_time_price'] : ''; ?>" name="monthly_card_time_price" class="form-control" step="1000">
+                            <input type="text" value="<?php echo!empty($detail['monthly_card_time_price']) ? number_format($detail['monthly_card_time_price']) : ''; ?>" name="monthly_card_time_price" class="form-control txtMoney">
                         </div>
                         <div class="form-group button-group">
                             <div class="form-group">

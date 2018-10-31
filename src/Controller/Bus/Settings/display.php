@@ -24,9 +24,19 @@ $settingKeys = array(
     'overnight_limit',
     'monthly_card_expire_type'
 );
+$numberKey = array(
+    'card_lost_fee',
+    'total_card',
+    'total_monthly_card',
+    'monthly_card_limit',
+    'overnight_limit'
+);
 
 $data = array();
 foreach ($settingKeys as $k) {
+    if (in_array($k, $numberKey) && !empty($detail[$k])) {
+        $detail[$k] = number_format($detail[$k]);
+    }
     $data[$k] = !empty($detail[$k]) ? $detail[$k] : '';
 }
 
@@ -76,6 +86,9 @@ if ($this->request->is('post')) {
         'type' => $type
     );
     foreach ($settingKeys as $p) {
+        if (in_array($p, $numberKey) && !empty($data[$p])) {
+            $data[$p] = preg_replace('[,]', '', $data[$p]);
+        }
         $param['data'][$p] = !empty($data[$p]) ? $data[$p] : '';
     }
     $param['data'] = json_encode($param['data']);
