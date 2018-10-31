@@ -109,3 +109,8 @@ $this->set('total', $total);
 $this->set('param', $param);
 $this->set('limit', $param['limit']);
 $this->set('data', $data);
+$showSearchBox = false;
+if (count($param) > 3) {
+    $showSearchBox = true;
+}
+$this->set('showSearchBox', $showSearchBox);

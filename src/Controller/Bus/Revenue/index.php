@@ -57,3 +57,8 @@ $data = Api::call(Configure::read('API.url_orders_revenue'), $param);
 
 $this->set('data', $data);
 $this->set('param', $param);
+$showSearchBox = false;
+if (!empty($param)) {
+    $showSearchBox = true;
+}
+$this->set('showSearchBox', $showSearchBox);
