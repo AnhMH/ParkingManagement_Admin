@@ -17,12 +17,23 @@ $dataSearch = array(
     'disable' => 0, 
     'limit' => $pageSize
 );
+$types = $this->Common->arrayKeyValue(
+    Api::call(Configure::read('API.url_admintypes_all'), array()), 
+    'id', 
+    'name'
+);
 $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
             'id' => 'name',
             'label' => __('LABEL_NAME')
+        ))
+        ->addElement(array(
+            'id' => 'type',
+            'label' => __('LABEL_ADMIN_TYPE'),
+            'options' => $types,
+            'empty' => __('LABEL_ALL')
         ))
         ->addElement(array(
             'id' => 'limit',

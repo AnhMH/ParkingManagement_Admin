@@ -19,6 +19,10 @@ $this->SearchForm
         ->setAttribute('type', 'get')
         ->setData($dataSearch)
         ->addElement(array(
+            'id' => 'adminname',
+            'label' => __('LABEL_NAME')
+        ))
+        ->addElement(array(
             'id' => 'option1',
             'label' => __('LABEL_ONE_DATE'),
             'calendar' => true

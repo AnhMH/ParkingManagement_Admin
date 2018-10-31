@@ -30,7 +30,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="<?php echo $BASE_URL; ?>/admins/updateprofile" class="btn btn-default btn-flat"><?php echo __('LABEL_UPDATE_PROFILE'); ?></a>
+                                <a href="<?php echo $BASE_URL; ?>/admins/update/<?php echo $AppUI['id'];?>" class="btn btn-default btn-flat"><?php echo __('LABEL_UPDATE_PROFILE'); ?></a>
                             </div>
                             <div class="pull-right">
                                 <a href="<?php echo $BASE_URL; ?>/login/logout" class="btn btn-default btn-flat"><?php echo __('LABEL_SIGN_OUT'); ?></a>
