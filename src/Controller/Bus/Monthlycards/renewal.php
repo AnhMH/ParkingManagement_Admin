@@ -40,6 +40,19 @@ $this->SearchForm
             'empty' => 'Chọn loại xe'
         ))
         ->addElement(array(
+            'id' => 'is_expired',
+            'label' => __('Hết hạn'),
+            'options' => array(
+                '1' => 'Hết hạn',
+                '2' => 'Còn hạn'
+            ),
+            'empty' => __('LABEL_ALL')
+        ))
+        ->addElement(array(
+            'id' => 'expire_day',
+            'label' => __('Số ngày sắp hết hạn')
+        ))
+        ->addElement(array(
             'id' => 'limit',
             'label' => __('LABEL_LIMIT'),
             'options' => Configure::read('Config.searchPageSize'),
