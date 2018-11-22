@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/AdminLTE.min.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/bower_components/select2/dist/css/select2.min.css"/>
-        <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/skins/skin-blue.min.css?<?php echo VERSION_DATE ?>"/>
+        <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/skins/skin-custom.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/plugins/pace/pace.min.css"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/bootstrap-toggle.min.css"/>
@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body id="container_<?php echo $controller . '_' . $action; ?>" class="skin-blue sidebar-mini">
+    <body id="container_<?php echo $controller . '_' . $action; ?>" class="skin-custom sidebar-mini">
 
         <div id="wrapper">
             <!-- Start Header -->
