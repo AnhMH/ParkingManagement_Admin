@@ -164,3 +164,34 @@
 .skin-custom .main-footer {
     border-top: 4px #d2d6de solid;
 }
+.skin-custom .user-menu > a > span {
+    color: #2E2A25;
+    font-weight: bold;
+}
+.skin-custom .main-footer strong a {
+    color: #2E2A25;
+}
+.fa-custom {
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    margin-right: 5px;
+}
+.fa-user-custom {
+    background-image: url('../../img/fa_user_1.png');
+}
+li.active .fa-user-custom {
+    background-image: url('../../img/fa_user_2.png');
+}
+.fa-usd-custom {
+    background-image: url('../../img/fa_usd_1.png');
+}
+li.active .fa-usd-custom {
+    background-image: url('../../img/fa_usd_2.png');
+}
+.sidebar-mini.sidebar-collapse .sidebar-menu>li .fa-custom {
+    display: inline-block !important;
+    margin-right: 0;
+}

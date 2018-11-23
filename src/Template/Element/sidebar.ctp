@@ -31,12 +31,12 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
-        <div class="user-panel">
+        <div class="user-panel" style="margin-bottom: 40px;">
             <div class="pull-left image">
-                <img src="<?php echo $AppUI['avatar']; ?>" class="img-circle" alt="User Image">
+                <img src="<?php echo $BASE_URL; ?>/img/spm_logo_1.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p><?php echo $AppUI['display_name']; ?></p>
+                <p>SPM group</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -50,7 +50,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
             <?php if ($adminList || $adminLog || $adminType): ?>
             <li class="treeview <?php if (in_array($controller, array('admins', 'admintypes'))) echo ' active ' ?>">
                 <a href="#">
-                    <i class="fa fa-user"></i>
+                    <span class="fa-custom fa-user-custom"></span>
                     <span><?php echo __('LABEL_ADMIN_MANAGEMENT'); ?></span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -85,7 +85,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
             <?php if ($revenueList || $priceFormula1 || $priceFormula2 || $priceFormula3): ?>
             <li class="treeview <?php if (in_array($controller, array('revenue'))) echo ' active ' ?>">
                 <a href="#">
-                    <i class="fa fa fa-usd"></i>
+                    <span class="fa-custom fa-usd-custom"></span>
                     <span><?php echo __('LABEL_REVENUE_MANAGEMENT'); ?></span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

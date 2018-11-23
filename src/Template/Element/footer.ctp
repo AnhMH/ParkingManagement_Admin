@@ -2,6 +2,6 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2018 <a target="_blank" href="https://hoanganhonline.com">HoangAnhOnline</a>.</strong> All rights
+    Copyright &copy; 2018 <strong><a href="#">SPM group</a></strong>. All rights
     reserved.
 </footer>
