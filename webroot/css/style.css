@@ -31,7 +31,7 @@ img {
 .message {
     padding: 10px;
     color: #fff;
-    margin: 10px 0;
+    margin: 0;
 }
 .login-page .message {
     text-align: center;
