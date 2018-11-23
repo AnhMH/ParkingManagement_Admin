@@ -1,0 +1,71 @@
+html {
+    background-image: url('../img/bg_login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*overflow: hidden;*/
+    position: relative;
+}
+body, .login-page, .register-page {
+    background: rgb(46,42,37,0.8);
+}
+#container {
+    width: 100%;
+    height: 100%;
+}
+.login-footer {
+    position: absolute;
+    bottom: 0;
+    height: 39px;
+    width: 100%;
+    text-align: center;
+    background-image: url('../img/login_img_bottom_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 39px;
+}
+.login-conatainer {
+    width: 90%;
+    max-width: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login_logo {
+    text-align: center;
+}
+.login_msg {
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+}
+.btn-login {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #CEA052;
+    border-color: #CEA052;
+}
+.icheck {
+    margin-top: -10px;
+    color: #fff;
+    font-size: 12px;
+}
+.logo_bottom {
+    margin-top: 60px;
+}
+.form-control-feedback {
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+}
+.form_input_user {
+    background-image: url('../img/form_input_user.png');
+}
+.form_input_pass {
+    background-image: url('../img/form_input_pass.png');
+    background-size: 16px;
+}

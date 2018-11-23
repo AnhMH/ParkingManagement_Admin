@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/AdminLTE.min.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/adminlte/dist/css/skins/skin-black-light.min.css?<?php echo VERSION_DATE ?>"/>
         <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/style.css?<?php echo VERSION_DATE ?>"/>
+        <link rel="stylesheet" href="<?php echo $BASE_URL ?>/css/login.css?<?php echo VERSION_DATE ?>"/>
         
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
