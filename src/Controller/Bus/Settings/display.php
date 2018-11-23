@@ -19,6 +19,8 @@ $settingKeys = array(
     'parking_type',
     'card_lost_fee',
     'total_card',
+    'total_card_car',
+    'total_card_motor',
     'total_monthly_card',
     'monthly_card_limit',
     'overnight_limit',
@@ -27,6 +29,8 @@ $settingKeys = array(
 $numberKey = array(
     'card_lost_fee',
     'total_card',
+    'total_card_car',
+    'total_card_motor',
     'total_monthly_card',
     'monthly_card_limit',
     'overnight_limit'
@@ -55,6 +59,14 @@ $this->UpdateForm->reset()
     ->addElement(array(
         'id' => 'total_card',
         'label' => __('LABEL_TOTAL_CARD'),
+    ))    
+    ->addElement(array(
+        'id' => 'total_card_car',
+        'label' => __('Tổng sức chứa xe oto'),
+    ))    
+    ->addElement(array(
+        'id' => 'total_card_motor',
+        'label' => __('Tổng sức chứa xe máy'),
     ))    
     ->addElement(array(
         'id' => 'total_monthly_card',
