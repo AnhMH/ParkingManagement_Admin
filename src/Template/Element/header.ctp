@@ -15,7 +15,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?php echo $BASE_URL; ?>/img/spm_logo_2.png" class="user-image" alt="User Image">
-                        <span><?php echo $AppUI['display_name']; ?></span>
+                        <span>SPM group</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -23,7 +23,7 @@
                             <img src="<?php echo $BASE_URL; ?>/img/spm_logo_2.png" class="img-circle" alt="User Image">
 
                             <p>
-                                <?php echo $AppUI['display_name']; ?>
+                                SPM group
                                 <small><?php !empty($AppUI['created']) ? date('Y-m-d', $AppUI['created']) : '' ;?></small>
                             </p>
                         </li>
