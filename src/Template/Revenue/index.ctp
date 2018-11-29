@@ -22,19 +22,23 @@ $monthlyCardTotalPrice = 0;
                 </thead>
                 <tbody>
                     <?php if (!empty($data['card'])): ?>
-                    <?php foreach ($data['card'] as $val): ?>
-                    <?php 
-                    $cardTotalCheckin += $val['total_checkin'];
-                    $cardTotalCheckout += $val['total_checkout'];
-                    $cardTotalPrice += $val['total_price'];
-                    ?>
-                    <tr>
-                        <td><?php echo $val['vehicle_name'];?></td>
-                        <td><?php echo $val['total_checkin'];?></td>
-                        <td><?php echo $val['total_checkout'];?></td>
-                        <td><?php echo !empty($val['total_price']) ? number_format($val['total_price']) : 0;?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                        <?php foreach ($vehicleType as $k => $val): ?>
+                            <?php
+                            $vehicelType = !empty($data['card'][$k]) ? $data['card'][$k] : array();
+                            $totalCheckin = !empty($vehicelType['total_checkin']) ? $vehicelType['total_checkin'] : 0;
+                            $totalCheckout = !empty($vehicelType['total_checkout']) ? $vehicelType['total_checkout'] : 0;
+                            $totalPrice = !empty($vehicelType['total_price']) ? $vehicelType['total_price'] : 0;
+                            $cardTotalCheckin += $totalCheckin;
+                            $cardTotalCheckout += $totalCheckout;
+                            $cardTotalPrice += $totalPrice;
+                            ?>
+                            <tr>
+                                <td><?php echo $val;?></td>
+                                <td><?php echo $totalCheckin;?></td>
+                                <td><?php echo $totalCheckout;?></td>
+                                <td><?php echo !empty($totalPrice) ? number_format($totalPrice) : 0;?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                     <?php if (empty($param['card_type']) || $param['card_type'] == 1): ?>
                     <tr class="info">
@@ -45,19 +49,23 @@ $monthlyCardTotalPrice = 0;
                     </tr>
                     <?php endif; ?>
                     <?php if (!empty($data['monthly_card'])): ?>
-                    <?php foreach ($data['monthly_card'] as $val): ?>
-                    <?php 
-                    $monthlyCardTotalCheckin += $val['total_checkin'];
-                    $monthlyCardTotalCheckout += $val['total_checkout'];
-                    $monthlyCardTotalPrice += $val['total_price'];
-                    ?>
-                    <tr>
-                        <td><?php echo $val['vehicle_name'];?></td>
-                        <td><?php echo $val['total_checkin'];?></td>
-                        <td><?php echo $val['total_checkout'];?></td>
-                        <td><?php echo !empty($val['total_price']) ? number_format($val['total_price']) : 0;?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                    <?php foreach ($vehicleType as $k => $val): ?>
+                            <?php
+                            $vehicelType = !empty($data['monthly_card'][$k]) ? $data['monthly_card'][$k] : array();
+                            $totalCheckin = !empty($vehicelType['total_checkin']) ? $vehicelType['total_checkin'] : 0;
+                            $totalCheckout = !empty($vehicelType['total_checkout']) ? $vehicelType['total_checkout'] : 0;
+                            $totalPrice = !empty($vehicelType['total_price']) ? $vehicelType['total_price'] : 0;
+                            $monthlyCardTotalCheckin += $totalCheckin;
+                            $monthlyCardTotalCheckout += $totalCheckout;
+                            $monthlyCardTotalPrice += $totalPrice;
+                            ?>
+                            <tr>
+                                <td><?php echo $val;?></td>
+                                <td><?php echo $totalCheckin;?></td>
+                                <td><?php echo $totalCheckout;?></td>
+                                <td><?php echo !empty($totalPrice) ? number_format($totalPrice) : 0;?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                     <?php if (empty($param['card_type']) || $param['card_type'] == 2): ?>
                     <tr class="info">

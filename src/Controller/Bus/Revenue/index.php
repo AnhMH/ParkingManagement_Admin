@@ -54,8 +54,9 @@ $this->SearchForm
 $param = $this->getParams();
 
 $data = Api::call(Configure::read('API.url_orders_revenue'), $param);
-
+$vehicleType = Configure::read('Config.vehicleType'); 
 $this->set('data', $data);
+$this->set('vehicleType', $vehicleType);
 $this->set('param', $param);
 $showSearchBox = false;
 if (!empty($param)) {
