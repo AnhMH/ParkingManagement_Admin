@@ -76,11 +76,11 @@ $this->SimpleTable
             'title' => __('LABEL_MONTHLY_COST'),
             'empty' => ''
         ))
-        ->addColumn(array(
-            'id' => 'limit',
-            'title' => __('LABEL_LIMIT2'),
-            'empty' => ''
-        ))
+//        ->addColumn(array(
+//            'id' => 'limit',
+//            'title' => __('LABEL_LIMIT2'),
+//            'empty' => ''
+//        ))
         ->addColumn(array(
             'type' => 'link',
             'title' => __('LABEL_EDIT'),
