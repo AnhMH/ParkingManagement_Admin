@@ -57,10 +57,10 @@ $this->UpdateForm->reset()
         'id' => 'monthly_cost',
         'label' => __('LABEL_MONTHLY_COST'),
     ))    
-    ->addElement(array(
-        'id' => 'limit',
-        'label' => __('LABEL_LIMIT2'),
-    ))    
+//    ->addElement(array(
+//        'id' => 'limit',
+//        'label' => __('LABEL_LIMIT2'),
+//    ))    
     ->addElement(array(
         'type' => 'submit',
         'value' => __('LABEL_SAVE'),

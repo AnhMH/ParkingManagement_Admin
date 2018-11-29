@@ -22,8 +22,8 @@ $settingKeys = array(
     'total_card_car',
     'total_card_motor',
     'total_monthly_card',
-    'monthly_card_limit',
-    'overnight_limit',
+//    'monthly_card_limit',
+//    'overnight_limit',
     'monthly_card_expire_type'
 );
 $numberKey = array(
@@ -32,8 +32,8 @@ $numberKey = array(
     'total_card_car',
     'total_card_motor',
     'total_monthly_card',
-    'monthly_card_limit',
-    'overnight_limit'
+//    'monthly_card_limit',
+//    'overnight_limit'
 );
 
 $data = array();
@@ -72,14 +72,14 @@ $this->UpdateForm->reset()
         'id' => 'total_monthly_card',
         'label' => __('LABEL_TOTAL_MONTHLY_CARD'),
     ))    
-    ->addElement(array(
-        'id' => 'monthly_card_limit',
-        'label' => __('LABEL_MONTHLY_CARD_LIMIT'),
-    ))    
-    ->addElement(array(
-        'id' => 'overnight_limit',
-        'label' => __('LABEL_OVERNIGHT_LIMIT'),
-    ))    
+//    ->addElement(array(
+//        'id' => 'monthly_card_limit',
+//        'label' => __('LABEL_MONTHLY_CARD_LIMIT'),
+//    ))    
+//    ->addElement(array(
+//        'id' => 'overnight_limit',
+//        'label' => __('LABEL_OVERNIGHT_LIMIT'),
+//    ))    
     ->addElement(array(
         'id' => 'monthly_card_expire_type',
         'label' => __('LABEL_MONTHLY_CARD_EXPIRE_TYPE'),
