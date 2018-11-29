@@ -43,7 +43,8 @@ $param = $this->getParams(array(
 $result = Api::call(Configure::read('API.url_vehicles_list'), $param);
 $total = !empty($result['total']) ? $result['total'] : 0;
 $data = !empty($result['data']) ? $result['data'] : array();
-
+$vehicleType = Configure::read('Config.vehicleType'); 
+$vehicleCardType = Configure::read('Config.vehicleCardType'); 
 // Show data
 $this->SimpleTable
         ->setDataset($data)
@@ -75,6 +76,18 @@ $this->SimpleTable
             'id' => 'monthly_cost',
             'title' => __('LABEL_MONTHLY_COST'),
             'empty' => ''
+        ))
+        ->addColumn(array(
+            'id' => 'type',
+            'title' => __('Loại xe'),
+            'empty' => '',
+            'rules' => $vehicleType
+        ))
+        ->addColumn(array(
+            'id' => 'card_type',
+            'title' => __('Loại vé'),
+            'empty' => '',
+            'rules' => $vehicleCardType
         ))
 //        ->addColumn(array(
 //            'id' => 'limit',

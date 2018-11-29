@@ -22,6 +22,8 @@ if (!empty($id)) {
     // Create new
     $pageTitle = __('LABEL_ADD_NEW');
 }
+$vehicleType = Configure::read('Config.vehicleType'); 
+$vehicleCardType = Configure::read('Config.vehicleCardType'); 
 
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/vehicles');
@@ -56,6 +58,16 @@ $this->UpdateForm->reset()
     ->addElement(array(
         'id' => 'monthly_cost',
         'label' => __('LABEL_MONTHLY_COST'),
+    ))    
+    ->addElement(array(
+        'id' => 'type',
+        'label' => __('Loại xe'),
+        'options' => $vehicleType
+    ))    
+    ->addElement(array(
+        'id' => 'card_type',
+        'label' => __('Loại vé'),
+        'options' => $vehicleCardType
     ))    
 //    ->addElement(array(
 //        'id' => 'limit',

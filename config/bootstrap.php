@@ -287,6 +287,14 @@ Configure::write('Config.priceLevel3Type', array(
     '1' => 'Cộng 1 mốc',
     '2' => 'Cộng 2 mốc'
 ));
+Configure::write('Config.vehicleType', array(
+    '1' => 'Xe máy',
+    '2' => 'Xe oto'
+));
+Configure::write('Config.vehicleCardType', array(
+    '1' => 'Vé thường',
+    '2' => 'Vé tháng'
+));
 Configure::write('Config.settingPermission', array(
     '1' => array(
         'title' => __('LABEL_ADMIN_MANAGEMENT'),
