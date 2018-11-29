@@ -11,7 +11,9 @@ $this->Breadcrumb->setTitle($pageTitle)
 
 $type = Configure::read('Config.settingType')['price_formula1'];
 $vehicles = $this->Common->arrayKeyValue(
-    Api::call(Configure::read('API.url_vehicles_all'), array()), 
+    Api::call(Configure::read('API.url_vehicles_all'), array(
+        'card_type' => 1
+    )), 
     'id', 
     'name'
 );
