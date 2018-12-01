@@ -22,4 +22,12 @@ class AjaxController extends AppController {
         $this->autoRender = false;
         include ('Bus/Ajax/monthlycardrenewal.php');
     }
+    
+    /**
+     * Get card detail
+     */
+    public function getcarddetail() {
+        $this->autoRender = false;
+        include ('Bus/Ajax/getcarddetail.php');
+    }
 }

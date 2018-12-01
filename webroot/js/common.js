@@ -103,6 +103,8 @@ $(document).ready(function ($) {
             $(this).val(cms_encode_currency_format(value));
         }
     });
+    
+    monthlyCardAddupdate();
 });
 
 /**
@@ -321,5 +323,39 @@ function monthlyCardRenewal(type, ids) {
         complete: function(){
             
         }
+    });
+}
+
+/**
+ * Download csv file sample
+ */
+function monthlyCardAddupdate() {
+    $('#vehicle_id').attr('disabled', true);
+    var cardCode = $('#container_monthlycards_update #card_code');
+    cardCode.on('blur', function(){
+        var val = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: baseUrl + '/ajax/getcarddetail',
+            data: {
+                'card_code': val,
+                '_csrfToken': _csrfToken
+            },
+            success: function (response) {
+                var obj = JSON.parse(response);
+                if (obj.status == 'OK') {
+                    var stt = obj.data.stt;
+                    var vehicleId = obj.data.vehicle_id;
+                    var monthlyCost = obj.data.monthly_cost;
+                    $('#parking_fee').val(monthlyCost);
+                    $('#vehicle_id').val(vehicleId);
+                } else {
+    //                alert('Thẻ chưa được đăng kí vào hệ thống');
+                }
+            },
+            complete: function(){
+
+            }
+        });
     });
 }
