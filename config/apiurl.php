@@ -40,6 +40,12 @@ Configure::write('API.url_vehicles_all', 'vehicles/all');
 Configure::write('API.url_vehicles_addupdate', 'vehicles/addupdate');
 Configure::write('API.url_vehicles_disable', 'vehicles/disable');
 
+Configure::write('API.url_companies_list', 'companies/list');
+Configure::write('API.url_companies_detail', 'companies/detail');
+Configure::write('API.url_companies_all', 'companies/all');
+Configure::write('API.url_companies_addupdate', 'companies/addupdate');
+Configure::write('API.url_companies_disable', 'companies/disable');
+
 Configure::write('API.url_admintypes_list', 'admintypes/list');
 Configure::write('API.url_admintypes_detail', 'admintypes/detail');
 Configure::write('API.url_admintypes_all', 'admintypes/all');

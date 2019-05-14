@@ -408,3 +408,18 @@ msgstr "Cập nhật CT TT lũy tiến"
 
 msgid "LABEL_LOG_TYPE_UPDATE_PRICE_FORMULA3"
 msgstr "Cập nhật CT tổng hợp"
+
+msgid "LABEL_COMPANY_PROJECT_MANAGEMENT"
+msgstr "Quản lý công ty - dự án"
+
+msgid "LABEL_COMPANY_MANAGEMENT"
+msgstr "Quản lý công ty"
+
+msgid "LABEL_PROJECT_MANAGEMENT"
+msgstr "Quản lý dự án"
+
+msgid "LABEL_COMPANY_NAME"
+msgstr "Tên công ty"
+
+msgid "LABEL_COMPANY_LIST"
+msgstr "Danh sách công ty"

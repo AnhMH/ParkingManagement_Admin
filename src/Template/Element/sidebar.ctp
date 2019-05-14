@@ -82,6 +82,28 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
             </li>
             <?php endif; ?>
             
+            <li class="treeview <?php if (in_array($controller, array('companies', 'projects'))) echo ' active ' ?>">
+                <a href="#">
+                    <span class="fa-custom fa-building-o"></span>
+                    <span><?php echo __('LABEL_COMPANY_PROJECT_MANAGEMENT'); ?></span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($controller == 'companies') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/companies">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_COMPANY_MANAGEMENT');?>
+                        </a>
+                    </li>
+                    <li class="<?php if ($controller == 'projects') echo ' active ' ?>">
+                        <a href="<?php echo $BASE_URL; ?>/projects">
+                            <i class="fa fa-circle-o"></i> <?php echo __('LABEL_PROJECT_MANAGEMENT');?>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
             <?php if ($revenueList || $priceFormula1 || $priceFormula2 || $priceFormula3): ?>
             <li class="treeview <?php if (in_array($controller, array('revenue'))) echo ' active ' ?>">
                 <a href="#">
