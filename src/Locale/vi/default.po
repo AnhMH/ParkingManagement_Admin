@@ -423,3 +423,12 @@ msgstr "Tên công ty"
 
 msgid "LABEL_COMPANY_LIST"
 msgstr "Danh sách công ty"
+
+msgid "LABEL_PROJECT_NAME"
+msgstr "Tên dự án"
+
+msgid "LABEL_PROJECT_LIST"
+msgstr "Danh sách dự án"
+
+msgid "MESSAGE_REQUIRED_NAME"
+msgstr "Vui lòng nhập tên"

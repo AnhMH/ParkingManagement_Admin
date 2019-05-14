@@ -46,6 +46,12 @@ Configure::write('API.url_companies_all', 'companies/all');
 Configure::write('API.url_companies_addupdate', 'companies/addupdate');
 Configure::write('API.url_companies_disable', 'companies/disable');
 
+Configure::write('API.url_projects_list', 'projects/list');
+Configure::write('API.url_projects_detail', 'projects/detail');
+Configure::write('API.url_projects_all', 'projects/all');
+Configure::write('API.url_projects_addupdate', 'projects/addupdate');
+Configure::write('API.url_projects_disable', 'projects/disable');
+
 Configure::write('API.url_admintypes_list', 'admintypes/list');
 Configure::write('API.url_admintypes_detail', 'admintypes/detail');
 Configure::write('API.url_admintypes_all', 'admintypes/all');
