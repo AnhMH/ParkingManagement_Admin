@@ -142,12 +142,12 @@ $this->SimpleTable
             'title' => __('LABEL_MONTHLY_CARD'),
             'empty' => ''
         ))
-        ->addButton(array(
-            'type' => 'submit',
-            'value' => __('LABEL_SAVE_CARD_LOST'),
-            'class' => 'btn btn-danger btn-disable',
-            'data-confirm' => 'Bạn có muốn lưu mất các thẻ được chọn?'
-        ))
+//        ->addButton(array(
+//            'type' => 'submit',
+//            'value' => __('LABEL_SAVE_CARD_LOST'),
+//            'class' => 'btn btn-danger btn-disable',
+//            'data-confirm' => 'Bạn có muốn lưu mất các thẻ được chọn?'
+//        ))
         ->addButton(array(
             'type' => 'submit',
             'value' => __('LABEL_EXPORT_EXCEL'),
