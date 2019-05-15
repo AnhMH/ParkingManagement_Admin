@@ -299,21 +299,30 @@ class SimpleTableHelper extends AppHelper {
                 $options = !empty($options) ? implode(' ', $options) : '';
                 if ($item['type'] == 'link') {
                     if ($data[$item['id']] != '') {
-                        $_link_text = $data[$item['id']];
-                        if (!empty($item['link_text'])) {
-                            $_link_text = $item['link_text'];
-                        }
-                        if (isset($item['button'])) {
-                            $value = "<a {$options}><span class=\"label label-primary\">{$_link_text}</span></a>";
-                        } else {
-                            if(!empty($item['before_icon'])){
-                                //LongDH 2017/07/13
-                                $value = "<a {$options}>{$item['before_icon']} {$_link_text}</a>";
-                            }else{
-                                $value = "<a {$options}>{$_link_text}</a>";
+                        if ($data['id'] < 0) {
+                            $_link_text = '';
+                            if ($value == 'Chỉnh sửa') {
+                                $value = '';
                             }
                             
+                        } else {
+                            $_link_text = $data[$item['id']];
+                            if (!empty($item['link_text'])) {
+                                $_link_text = $item['link_text'];
+                            }
+                            if (isset($item['button'])) {
+                                $value = "<a {$options}><span class=\"label label-primary\">{$_link_text}</span></a>";
+                            } else {
+                                if(!empty($item['before_icon'])){
+                                    //LongDH 2017/07/13
+                                    $value = "<a {$options}>{$item['before_icon']} {$_link_text}</a>";
+                                }else{
+                                    $value = "<a {$options}>{$_link_text}</a>";
+                                }
+
+                            }
                         }
+                        
                     }
                 }
                 if (!empty($item['before'])) {

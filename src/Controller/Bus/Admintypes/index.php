@@ -43,6 +43,14 @@ $param = $this->getParams(array(
 $result = Api::call(Configure::read('API.url_admintypes_list'), $param);
 $total = !empty($result['total']) ? $result['total'] : 0;
 $data = !empty($result['data']) ? $result['data'] : array();
+$data[] = array(
+    'id' => '-1',
+    'name' => 'Admin'
+);
+$data[] = array(
+    'id' => '-2',
+    'name' => 'Nhân viên'
+);
 
 // Show data
 $this->SimpleTable
@@ -72,6 +80,7 @@ $this->SimpleTable
             'href' => $this->BASE_URL . '/' . $this->controller . '/update/{id}',
             'button' => true,
             'width' => 100,
+            'data-id' => "{id}"
         ))
         ->addButton(array(
             'type' => 'submit',
