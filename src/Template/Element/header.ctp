@@ -26,6 +26,7 @@
                                 SPM group
                                 <small><?php !empty($AppUI['created']) ? date('Y-m-d', $AppUI['created']) : '' ;?></small>
                             </p>
+                            <p><?php echo !empty($AppUI['name']) ? $AppUI['name'] : '';?></p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">

@@ -48,7 +48,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
                 </a>
             </li>
             <?php if ($adminList || $adminLog || $adminType): ?>
-            <li class="treeview <?php if (in_array($controller, array('admins', 'admintypes'))) echo ' active ' ?>">
+            <li class="treeview <?php if (in_array($controller, array('admins', 'admintypes')) && $action != 'updateprofile') echo ' active ' ?>">
                 <a href="#">
                     <span class="fa-custom fa-user-custom"></span>
                     <span><?php echo __('LABEL_ADMIN_MANAGEMENT'); ?></span>
@@ -84,7 +84,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
             
             <li class="treeview <?php if (in_array($controller, array('companies', 'projects'))) echo ' active ' ?>">
                 <a href="#">
-                    <span class="fa-custom fa-building-o"></span>
+                    <span class="fa fa-building-o"></span>
                     <span><?php echo __('LABEL_COMPANY_PROJECT_MANAGEMENT'); ?></span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -299,6 +299,12 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
                 </ul>
             </li>
             <?php endif; ?>
+            
+            <li class="<?php if (in_array($controller, array('admins')) && $action == 'updateprofile') echo ' active ' ?>">
+                <a href="<?php echo $BASE_URL; ?>/admins/updateprofile">
+                    <i class="fa fa-user-secret"></i> <span><?php echo __('LABEL_UPDATE_PROFILE'); ?></span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
