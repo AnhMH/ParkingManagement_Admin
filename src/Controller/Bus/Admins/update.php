@@ -6,7 +6,7 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 
 // Load detail
-$data = null;
+$data = array();
 if (!empty($id)) {
     // Edit
     $param['id'] = $id;
@@ -22,11 +22,23 @@ if (!empty($id)) {
     // Create new
     $pageTitle = __('LABEL_ADD_NEW');
 }
+$options = Api::call(Configure::read('API.url_admins_getoptions'), array());
 $types = $this->Common->arrayKeyValue(
-    Api::call(Configure::read('API.url_admintypes_all'), array()), 
+    !empty($options['admin_type']) ? $options['admin_type'] : array(), 
     'id', 
     'name'
 );
+$companies = !empty($options['companies']) ? $options['companies'] : array();
+$projects = !empty($options['projects']) ? $options['projects'] : array();
+foreach ($companies as &$c) {
+    foreach ($projects as $k => $p) {
+        if ($p['company_id'] == $c['id']) {
+            $c['projects'][] = $p;
+            unset($projects[$k]);
+        }
+    }
+}
+$genders = Configure::read('Config.gender');
 
 // Create breadcrumb
 $listPageUrl = h($this->BASE_URL . '/admins');
@@ -38,74 +50,59 @@ $this->Breadcrumb->setTitle($pageTitle)
         ->add(array(
             'name' => $pageTitle,
         ));
-// Create Update form 
-$form = new UpdateAdminForm();
-$this->UpdateForm->reset()
-        ->setModel($form)
-        ->setData($data)
-        ->setAttribute('autocomplete', 'off')
-        ->addElement(array(
-            'id' => 'id',
-            'type' => 'hidden',
-            'label' => __('id'),
-        ))
-        ->addElement(array(
-            'id' => 'name',
-            'label' => __('LABEL_NAME'),
-            'required' => true,
-        ))
-        ->addElement(array(
-            'id' => 'account',
-            'label' => __('LABEL_ACCOUNT'),
-            'required' => true,
-        ))
-        ->addElement(array(
-            'id' => 'pass',
-            'label' => __('LABEL_PASSWORD'),
-            'required' => true,
-        ))
-        ->addElement(array(
-            'id' => 'type',
-            'label' => __('LABEL_ADMIN_TYPE'),
-            'required' => true,
-            'options' => $types
-        ))
-        ->addElement(array(
-            'id' => 'gender',
-            'label' => __('LABEL_GENDER'),
-            'options' => Configure::read('Config.gender')
-        ))
-        ->addElement(array(
-            'type' => 'submit',
-            'value' => __('LABEL_SAVE'),
-            'class' => 'btn btn-primary',
-        ))
-        ->addElement(array(
-            'type' => 'submit',
-            'value' => __('LABEL_CANCEL'),
-            'class' => 'btn',
-            'onclick' => "return back();"
-        ));
+$dataCompanies = array();
+$dataProjects = array();
+if (!empty($data['projects'])) {
+    foreach ($data['projects'] as $v) {
+        $dataCompanies[$v['company_id']][] = $v;
+        $dataProjects[$v['project_id']] = $v;
+    }
+}
+
+$this->set(compact(array(
+    'data',
+    'types',
+    'companies',
+    'genders',
+    'dataCompanies',
+    'dataProjects'
+)));
 
 // Valdate and update
 if ($this->request->is('post')) {
     // Trim data
-    $data = $this->request->data();
-    foreach ($data as $key => $value) {
+    $param = $this->request->data();
+    foreach ($param as $key => $value) {
         if (is_scalar($value)) {
-            $data[$key] = trim($value);
+            $param[$key] = trim($value);
         }
     }
     // Validation
-    if ($form->validate($data)) {
-        // Call API
-        $id = Api::call(Configure::read('API.url_admins_addupdate'), $data);
-        $err = Api::getError();
-        if (!empty($id) && empty($err)) {
-            $this->Flash->success(__('MESSAGE_SAVE_OK'));
-            return $this->redirect("{$this->BASE_URL}/{$this->controller}/update/{$id}");
-        } else {
-            return $this->Flash->error(html_entity_decode(Api::parseErrorMess($err)));
+    if (empty($param['name'])) {
+        return $this->Flash->error(__('MESSAGE_REQUIRED_NAME'));
+    }
+    if (empty($param['project'])) {
+        return $this->Flash->error(__('Vui lòng chọn công ty và dự án'));
+    } else {
+        $projects = array();
+        foreach ($param['project'] as $k => $v) {
+            foreach ($v as $kp => $p) {
+                $projects[$kp] = $k;
+            }
         }
+        if ($param['type'] == '-2' && count($projects) > 1) {
+            return $this->Flash->error(__('Nhân viên chỉ được phép chọn 1 công ty và 1 dự án'));
+        }
+        $param['projects'] = json_encode($projects);
+    }
+    
+    // Call API
+    $id = Api::call(Configure::read('API.url_admins_addupdate'), $param);
+    $err = Api::getError();
+    if (!empty($id) && empty($err)) {
+        $this->Flash->success(__('MESSAGE_SAVE_OK'));
+        return $this->redirect("{$this->BASE_URL}/{$this->controller}/update/{$id}");
+    } else {
+        return $this->Flash->error(html_entity_decode(Api::parseErrorMess($err)));
     }
 }

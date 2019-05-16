@@ -17,6 +17,7 @@ Configure::write('API.url_admins_all', 'admins/all');
 Configure::write('API.url_admins_addupdate', 'admins/addupdate');
 Configure::write('API.url_admins_detail', 'admins/detail');
 Configure::write('API.url_admins_disable', 'admins/disable');
+Configure::write('API.url_admins_getoptions', 'admins/getoptions');
 
 Configure::write('API.url_cards_list', 'cards/list');
 Configure::write('API.url_cards_detail', 'cards/detail');
