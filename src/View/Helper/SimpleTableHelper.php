@@ -158,7 +158,7 @@ class SimpleTableHelper extends AppHelper {
             }
             $iconSort = '';
             if (!empty($item['sort']) && !empty($item['title']) && !empty($item['id'])) {
-                $requestParam = $this->request->query;
+                $requestParam = $this->request->getQuery();
                 $sortExplode = explode('-', !empty($requestParam['sort']) ? $requestParam['sort'] : '');
                 if (!empty($sortExplode[1]) && $sortExplode[1] == 'DESC') {
                     $sort = "?sort={$item['id']}-ASC";

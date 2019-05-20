@@ -89,7 +89,7 @@ class AppController extends Controller {
         $this->setSystemConfig();
         
         // set session ckeditor
-        $this->request->session()->write('ckeditor', Configure::read('Config.CKeditor'));
+        $this->request->getSession()->write('ckeditor', Configure::read('Config.CKeditor'));
     }
 
     /**
@@ -112,8 +112,8 @@ class AppController extends Controller {
         }
         parent::beforeFilter($event);
 
-        $this->controller = strtolower($this->request->params['controller']);
-        $this->action = strtolower($this->request->params['action']);
+        $this->controller = strtolower($this->request->getParam('controller'));
+        $this->action = strtolower($this->request->getParam('action'));
         $this->current_url = Router::url($this->here, true);
         $this->BASE_URL = Router::fullBaseUrl() . USE_SUB_DIRECTORY;
         $this->BASE_URL_FRONT = Configure::read('Front.Host');
@@ -170,7 +170,7 @@ class AppController extends Controller {
         $this->set('BASE_URL_FRONT', $this->BASE_URL_FRONT);
         $this->set('url', $this->request->url);
         $this->set('referer', Controller::referer());
-        $this->set('system_project_id', $this->request->session()->read(COOKIE_PROJECT_ID));
+        $this->set('system_project_id', $this->request->getSession()->read(COOKIE_PROJECT_ID));
 
         // Set default layout
         $this->setLayout();
@@ -213,7 +213,7 @@ class AppController extends Controller {
      * @return array
      */
     public function getParams($default = array()) {
-        $params = $this->request->query;
+        $params = $this->request->getQuery();
         if (!empty($default)) {
             foreach ($default as $paramName => $paramValue) {
                 if (!isset($params[$paramName])) {
@@ -472,8 +472,8 @@ class AppController extends Controller {
         if (!empty($param['system_company_id'])) {
             $companyID = $param['system_company_id'];
         } else {
-            if ($this->request->session()->check(COOKIE_COMPANY_ID)) {
-                $companyID = $this->request->session()->read(COOKIE_COMPANY_ID);
+            if ($this->request->getSession()->check(COOKIE_COMPANY_ID)) {
+                $companyID = $this->request->getSession()->read(COOKIE_COMPANY_ID);
             } else {
                 $companyID = '';
             }
@@ -481,14 +481,14 @@ class AppController extends Controller {
         if (!empty($param['system_project_id'])) {
             $projectID = $param['system_project_id'];
         } else {
-            if ($this->request->session()->check(COOKIE_PROJECT_ID)) {
-                $projectID = $this->request->session()->read(COOKIE_PROJECT_ID);
+            if ($this->request->getSession()->check(COOKIE_PROJECT_ID)) {
+                $projectID = $this->request->getSession()->read(COOKIE_PROJECT_ID);
             } else {
                 $projectID = '';
             }
         }
-        $this->request->session()->write(COOKIE_COMPANY_ID, $companyID);
-        $this->request->session()->write(COOKIE_PROJECT_ID, $projectID);
+        $this->request->getSession()->write(COOKIE_COMPANY_ID, $companyID);
+        $this->request->getSession()->write(COOKIE_PROJECT_ID, $projectID);
     }
 
 }

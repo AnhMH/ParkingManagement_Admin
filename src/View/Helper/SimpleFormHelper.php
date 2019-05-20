@@ -113,8 +113,8 @@ class SimpleFormHelper extends AppHelper {
                 $_from = $id . '_from';
                 $_to = $id . '_to';
                 $_separator = 'form_from_to_separator';
-                $_from_value = !empty($this->request->data[$_from]) ? $this->request->data[$_from] : (!empty($this->request->query[$_from]) ? $this->request->query[$_from] : '');
-                $_to_value = !empty($this->request->data[$_to]) ? $this->request->data[$_to] : (!empty($this->request->query[$_to]) ? $this->request->query[$_to] : '');
+                $_from_value = !empty($this->request->data[$_from]) ? $this->request->data[$_from] : (!empty($this->request->getQuery()[$_from]) ? $this->request->getQuery()[$_from] : '');
+                $_to_value = !empty($this->request->data[$_to]) ? $this->request->data[$_to] : (!empty($this->request->getQuery()[$_to]) ? $this->request->getQuery()[$_to] : '');
                 
                 $html .= '<div class="form-group FormFromToContainer">';
                 $html .= $this->Form->label($id, $control['label']);

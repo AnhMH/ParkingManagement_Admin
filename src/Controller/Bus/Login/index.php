@@ -12,7 +12,7 @@ if (empty($this->AppUI->id) && !empty($this->Cookie->read($rememberAdminCookie))
 // Valdate and login
 if ($this->request->is('post')) {
     // Trim data
-    $data = $this->request->data();
+    $data = $this->request->getData();
     foreach ($data as $key => $value) {
         $data[$key] = trim($value);
     }
@@ -32,8 +32,8 @@ if ($this->request->is('post')) {
         if (!empty($user['projects'])) {
             foreach ($user['projects'] as $val) {
                 if (!empty($val['data'])) {
-                    $this->request->session()->write(COOKIE_COMPANY_ID, $val['id']);
-                    $this->request->session()->write(COOKIE_PROJECT_ID, $val['data'][0]['project_id']);
+                    $this->request->getSession()->write(COOKIE_COMPANY_ID, $val['id']);
+                    $this->request->getSession()->write(COOKIE_PROJECT_ID, $val['data'][0]['project_id']);
                     break;
                 }
             }
