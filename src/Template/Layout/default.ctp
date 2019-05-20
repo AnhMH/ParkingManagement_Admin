@@ -61,6 +61,7 @@
             var action = '<?php echo $action; ?>';
             var baseUrl = '<?php echo $BASE_URL; ?>';
             var referer = "<?php echo $referer; ?>";
+            var currentUrl = "<?php echo $current_url; ?>";
             var url = "<?php echo $url; ?>";
             var _csrfToken = "<?php echo $this->request->getParam('_csrfToken'); ?>"
         </script>

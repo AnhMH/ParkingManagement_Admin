@@ -112,8 +112,8 @@ $(document).ready(function ($) {
     $('#headerProjectSelect').on('change', function() {
         var projectId = $('#headerProjectSelect option:selected').val();
         var companyId = $('#headerProjectSelect option:selected').attr('data-company-id');
-        var url = baseUrl + '?system_project_id=' + projectId + '&system_company_id=' + companyId;
-        window.location.href = url;
+        var _url = baseUrl + '/' + url + '?system_project_id=' + projectId + '&system_company_id=' + companyId;
+        window.location.href = _url;
     });
 });
 
