@@ -28,6 +28,25 @@
                             </p>
                             <p><?php echo !empty($AppUI['name']) ? $AppUI['name'] : '';?></p>
                         </li>
+                        <li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <p class="headerSelectCustom">Hiển thị công ty - dự án</p>
+                                    <select class="headerSelectCustom" id="headerProjectSelect">
+                                        <?php if (!empty($AppUI['projects'])): ?>
+                                            <?php foreach ($AppUI['projects'] as $p): ?>
+                                            <option value="<?php echo $p['id'];?>" disabled="disabled"><?php echo $p['name'];?></option>
+                                            <?php if (!empty($p['data'])): ?>
+                                                <?php foreach ($p['data'] as $v): ?>
+                                                <option value="<?php echo $v['project_id'];?>" data-company-id="<?php echo $p['id'];?>" <?php echo !empty($system_project_id) && $system_project_id == $v['project_id'] ? "selected" : "";?>>-- <?php echo $v['project_name'];?></option>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
 <!--                            <div class="pull-left">

@@ -105,6 +105,16 @@ $(document).ready(function ($) {
     });
     
     monthlyCardAddupdate();
+    
+    $('.headerSelectCustom').on('click', function() {
+        return false;
+    });
+    $('#headerProjectSelect').on('change', function() {
+        var projectId = $('#headerProjectSelect option:selected').val();
+        var companyId = $('#headerProjectSelect option:selected').attr('data-company-id');
+        var url = baseUrl + '?system_project_id=' + projectId + '&system_company_id=' + companyId;
+        window.location.href = url;
+    });
 });
 
 /**

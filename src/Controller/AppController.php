@@ -84,7 +84,10 @@ class AppController extends Controller {
             ),
             'sessionKey' => 'Auth.ParkingManagement'
         ));
-
+        
+        // Set system config
+        $this->setSystemConfig();
+        
         // set session ckeditor
         $this->request->session()->write('ckeditor', Configure::read('Config.CKeditor'));
     }
@@ -167,6 +170,7 @@ class AppController extends Controller {
         $this->set('BASE_URL_FRONT', $this->BASE_URL_FRONT);
         $this->set('url', $this->request->url);
         $this->set('referer', Controller::referer());
+        $this->set('system_project_id', $this->request->session()->read(COOKIE_PROJECT_ID));
 
         // Set default layout
         $this->setLayout();
@@ -454,6 +458,37 @@ class AppController extends Controller {
             }
         }
         return $check;
+    }
+    
+    /**
+     * Set system config
+     */
+    public function setSystemConfig($param = array()) {
+        if (empty($param)) {
+            $param = $this->getParams();
+        }
+        $companyID = '';
+        $projectID = '';
+        if (!empty($param['system_company_id'])) {
+            $companyID = $param['system_company_id'];
+        } else {
+            if ($this->request->session()->check(COOKIE_COMPANY_ID)) {
+                $companyID = $this->request->session()->read(COOKIE_COMPANY_ID);
+            } else {
+                $companyID = '';
+            }
+        }
+        if (!empty($param['system_project_id'])) {
+            $projectID = $param['system_project_id'];
+        } else {
+            if ($this->request->session()->check(COOKIE_PROJECT_ID)) {
+                $projectID = $this->request->session()->read(COOKIE_PROJECT_ID);
+            } else {
+                $projectID = '';
+            }
+        }
+        $this->request->session()->write(COOKIE_COMPANY_ID, $companyID);
+        $this->request->session()->write(COOKIE_PROJECT_ID, $projectID);
     }
 
 }

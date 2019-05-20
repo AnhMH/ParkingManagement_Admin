@@ -445,3 +445,6 @@ define('DEFAULT_SITE_TITLE', 'Parking Management');
 if (!defined('USE_SUB_DIRECTORY')) {
     define('USE_SUB_DIRECTORY', '');
 }
+
+define('COOKIE_COMPANY_ID', 'PM.Cookie.CompanyID');
+define('COOKIE_PROJECT_ID', 'PM.Cookie.ProjectID');

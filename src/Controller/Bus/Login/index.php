@@ -29,6 +29,15 @@ if ($this->request->is('post')) {
             $user['avatar'] = $this->BASE_URL . '/img/' . Configure::read('default_avatar');
         }
         $this->Auth->setUser($user);
+        if (!empty($user['projects'])) {
+            foreach ($user['projects'] as $val) {
+                if (!empty($val['data'])) {
+                    $this->request->session()->write(COOKIE_COMPANY_ID, $val['id']);
+                    $this->request->session()->write(COOKIE_PROJECT_ID, $val['data'][0]['project_id']);
+                    break;
+                }
+            }
+        }
         
         // Did they select the remember me checkbox?
         if (!empty($data['remembera'])) {
