@@ -340,7 +340,7 @@ function monthlyCardRenewal(type, ids) {
  * Download csv file sample
  */
 function monthlyCardAddupdate() {
-    $('#vehicle_id').attr('disabled', true);
+    $('#container_monthlycards_update #vehicle_id').attr('disabled', true);
     var cardCode = $('#container_monthlycards_update #card_code');
     cardCode.on('blur', function(){
         var val = $(this).val();
