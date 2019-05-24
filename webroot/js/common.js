@@ -115,6 +115,12 @@ $(document).ready(function ($) {
         var _url = baseUrl + '/' + url + '?system_project_id=' + projectId + '&system_company_id=' + companyId;
         window.location.href = _url;
     });
+    
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    }); 
 });
 
 /**
