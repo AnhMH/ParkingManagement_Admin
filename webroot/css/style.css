@@ -114,3 +114,19 @@ img {
 .width-100 {
     width: 100px;
 }
+@media only screen and (min-width: 768px) {
+    #navbar-collapse .navbar-nav>li.dropdown > a {
+        text-align: center;
+    }
+    #navbar-collapse .navbar-nav>li.dropdown a .caret {
+        display: none;
+    }
+    #navbar-collapse .navbar-nav>li.dropdown>a:after {
+        font-family: 'FontAwesome';
+        content: "\f107";
+        position: absolute;
+        bottom: -2px;
+        left: 40%;
+        font-size: 22px;
+    }
+}

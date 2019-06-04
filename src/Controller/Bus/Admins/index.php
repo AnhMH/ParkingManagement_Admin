@@ -88,8 +88,9 @@ $this->SimpleTable
             'empty' => ''
         ))
         ->addColumn(array(
-            'id' => 'type_name',
+            'id' => 'type',
             'title' => __('LABEL_ADMIN_TYPE'),
+            'rules' => $types,
             'empty' => ''
         ))
         ->addColumn(array(

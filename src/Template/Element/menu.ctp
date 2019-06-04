@@ -37,6 +37,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('admins', 'admintypes')) && $action != 'updateprofile') echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Quản lý </br> nhân sự
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($adminList): ?>
@@ -67,6 +68,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
 <li class="dropdown <?php if (in_array($controller, array('companies', 'projects'))) echo ' active ' ?>">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         Quản lý <br /> công ty - dự án
+        <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
         <li class="<?php if ($controller == 'companies') echo ' active ' ?>">
@@ -86,6 +88,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('revenue'))) echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Quản lý <br /> doanh thu
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($revenueList): ?>
@@ -124,6 +127,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('vehicles', 'cards'))) echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
             Quản lý <br/> thẻ xe - loại xe
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($cardList): ?>
@@ -155,6 +159,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('monthlycards'))) echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Quản lý <br/> vé tháng
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($monthlyCardLog): ?>
@@ -200,6 +205,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('settings'))) echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Quản lý<br/>hệ thống
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($systemDisplaySetting): ?>
@@ -238,6 +244,7 @@ $checkInOutMonthlyCardLog = in_array('checkinout_monthly_card_log', $permission)
     <li class="dropdown <?php if (in_array($controller, array('checkinoutlogs'))) echo ' active ' ?>">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Quản lý<br/>xe ra vào
+            <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <?php if ($checkInOutCardLog): ?>
