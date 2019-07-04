@@ -35,9 +35,17 @@ $this->SearchForm
             'class' => 'btn btn-primary',
         ));
 
+
+$companyIds = array();
+if (!empty($this->AppUI['projects'])) {
+    foreach ($this->AppUI['projects'] as $k => $c) {
+        $companyIds[] = $k;
+    }
+}
 $param = $this->getParams(array(
     'limit' => $pageSize,
-    'disable' => 0
+    'disable' => 0,
+    'ids' => !empty($companyIds) ? implode(',', $companyIds) : ''
 ));
 
 $result = Api::call(Configure::read('API.url_companies_list'), $param);
